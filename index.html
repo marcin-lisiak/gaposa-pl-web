@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaposa Polska – Autoryzowany Dystrybutor | Silniki do rolet i bram</title>
+  <meta name="description" content="Gaposa Polska – autoryzowany dystrybutor włoskiej marki Gaposa. Profesjonalne silniki do rolet, markiz i bram przemysłowych. Seria BBS – niezawodna automatyka rolkowa." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gaposapolska.pl/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gaposa Polska – Autoryzowany Dystrybutor" />
+  <meta property="og:description" content="Profesjonalne silniki do rolet i bram przemysłowych. Autoryzowany dystrybutor marki Gaposa w Polsce." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar navbar--transparent" id="navbar" role="navigation" aria-label="Główna nawigacja">
+    <div class="navbar__inner">
+      <!-- Logo -->
+      <a href="/" class="navbar__logo" aria-label="Gaposa Polska – strona główna">
+        <img src="assets/img/gaposa-logo.svg" alt="Gaposa logo" width="140" height="36" />
+        <span class="navbar__logo-sub">Dystrybutor<br>Polska</span>
+      </a>
+
+      <!-- Desktop menu -->
+      <ul class="navbar__menu" role="menubar">
+        <li role="none"><a href="#o-nas" role="menuitem">O nas</a></li>
+        <li role="none"><a href="#produkty" role="menuitem">Produkty</a></li>
+        <li role="none"><a href="#dlaczego-my" role="menuitem">Dlaczego my</a></li>
+        <li role="none"><a href="#kontakt" role="menuitem">Kontakt</a></li>
+      </ul>
+
+      <!-- CTA + phone -->
+      <div class="navbar__cta">
+        <div class="navbar__contact-info">
+          <span>Bezpłatna wycena</span>
+          <a href="tel:+48000000000" aria-label="Zadzwoń do nas">+48 000 000 000</a>
+        </div>
+        <a href="#kontakt" class="btn btn--primary" id="nav-cta-btn">Zapytaj o ofertę</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="navbar__hamburger" id="hamburger"
+              aria-label="Otwórz menu" aria-expanded="false"
+              aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu mobilne">
+    <button class="mobile-nav__close" id="mobile-close" aria-label="Zamknij menu">✕</button>
+    <a href="#o-nas">O nas</a>
+    <a href="#produkty">Produkty</a>
+    <a href="#dlaczego-my">Dlaczego my</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:+48000000000" style="font-size:1.2rem;color:var(--color-primary);">+48 000 000 000</a>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════ -->
+    <section class="hero" id="home" aria-label="Sekcja główna">
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <div class="hero__badge">
+          <div class="hero__badge-dot"></div>
+          <span class="hero__badge-text">Autoryzowany dystrybutor · Polska</span>
+        </div>
+
+        <h1 class="hero__title">
+          Włoska precyzja<br>
+          w <span>automatyce</span><br>
+          rolkowej.
+        </h1>
+
+        <p class="hero__desc">
+          Oferujemy profesjonalne silniki Gaposa do rolet, bram komercyjnych i przemysłowych.
+          Niezawodna technologia z ponad 50 lat doświadczenia — dostępna teraz w Polsce.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#produkty" class="btn btn--primary" id="hero-products-btn">
+            Zobacz produkty
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#kontakt" class="btn btn--outline" id="hero-contact-btn">
+            Skontaktuj się
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         STATS BAR
+    ═══════════════════════════════════════════════ -->
+    <div class="stats-bar" role="region" aria-label="Kluczowe liczby">
+      <div class="container">
+        <div class="stats-bar__inner">
+          <div class="stats-bar__item">
+            <div class="stats-bar__value">
+              <span data-count="50" data-suffix="+">50+</span>
+            </div>
+            <div class="stats-bar__label">Lat na rynku</div>
+          </div>
+          <div class="stats-bar__item">
+            <div class="stats-bar__value">
+              <span data-count="80" data-suffix="+">80+</span>
+            </div>
+            <div class="stats-bar__label">Krajów dystrybucji</div>
+          </div>
+          <div class="stats-bar__item">
+            <div class="stats-bar__value">
+              <span data-count="1000" data-suffix="+">1000+</span>
+            </div>
+            <div class="stats-bar__label">Modeli produktów</div>
+          </div>
+          <div class="stats-bar__item">
+            <div class="stats-bar__value">
+              <span data-count="100" data-suffix="%">100%</span>
+            </div>
+            <div class="stats-bar__label">Made in Italy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         O NAS / BRAND
+    ═══════════════════════════════════════════════ -->
+    <section class="about section-pad" id="o-nas" aria-label="O nas">
+      <div class="container">
+        <div class="about__grid">
+          <!-- Image col -->
+          <div class="about__img-wrap reveal">
+            <img
+              src="assets/img/about-section.png"
+              alt="Budynek z rolety handlowe Gaposa"
+              width="600"
+              height="500"
+            />
+            <div class="about__img-accent" aria-hidden="true"></div>
+            <div class="about__img-badge" aria-label="Ponad 50 lat doświadczenia">
+              <div class="about__img-badge-num">50+</div>
+              <div class="about__img-badge-text">Lat<br>doświadczenia</div>
+            </div>
+          </div>
+
+          <!-- Text col -->
+          <div class="reveal reveal-delay-1">
+            <span class="label-tag">O marce</span>
+            <h2 class="section-title">Gaposa — włoski lider<br>automatyki roletowej</h2>
+            <p class="section-subtitle">
+              Gaposa S.r.l. z siedzibą w Fermo (Włochy) to jeden z wiodących producentów silników
+              do rolet, markiz, ekranów projekcyjnych oraz bram przemysłowych. Produkują od 1970 roku,
+              eksportując do ponad 80 krajów na całym świecie.
+            </p>
+            <p class="section-subtitle" style="margin-top:1rem;">
+              Jako autoryzowany dystrybutor na Polskę oferujemy pełen dostęp do portfolio Gaposa —
+              ze wsparciem technicznym, szybką dostawą i obsługą posprzedażową.
+            </p>
+
+            <div class="about__features">
+              <div class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">🇮🇹</span>
+                <div>
+                  <div class="about__feature-title">Produkcja włoska</div>
+                  <div class="about__feature-text">Wszystkie produkty projektowane i produkowane w Fermo, Włochy</div>
+                </div>
+              </div>
+              <div class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">🔒</span>
+                <div>
+                  <div class="about__feature-title">Certyfikaty CE</div>
+                  <div class="about__feature-text">Pełna zgodność z normami europejskimi i dyrektywami bezpieczeństwa</div>
+                </div>
+              </div>
+              <div class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">⚡</span>
+                <div>
+                  <div class="about__feature-title">Szybka dostawa</div>
+                  <div class="about__feature-text">Magazyn w Polsce — wysyłka do 48h od zamówienia</div>
+                </div>
+              </div>
+              <div class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">🛠️</span>
+                <div>
+                  <div class="about__feature-title">Wsparcie techniczne</div>
+                  <div class="about__feature-text">Dedykowany opiekun techniczny i szkolenia dla instalatorów</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         PRODUKTY
+    ═══════════════════════════════════════════════ -->
+    <section class="products section-pad" id="produkty" aria-label="Nasze produkty">
+      <div class="container">
+        <div class="products__header reveal">
+          <span class="label-tag">W naszej ofercie</span>
+          <h2 class="section-title">Seria BBS</h2>
+          <p class="section-subtitle" style="margin: 0.75rem auto 0; text-align:center;">
+            Przemysłowe silniki rurowe Gaposa do rolet komercyjnych i bram handlowych.
+            Zaprojektowane do intensywnego użytkowania — niezawodność i precyzja w każdym cyklu.
+          </p>
+        </div>
+
+        <div class="products__grid">
+
+          <!-- BBS 70 MKF/F -->
+          <article class="product-card reveal reveal-delay-1">
+            <div class="product-card__img-wrap">
+              <img
+                src="assets/img/hero-bbs-motor.png"
+                alt="Silnik rolety Gaposa BBS 70 MKF/F"
+                width="600"
+                height="280"
+                loading="lazy"
+              />
+              <span class="product-card__tag">Seria BBS</span>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__type">Silnik rurowy · Komercyjny</div>
+              <h3 class="product-card__name">BBS 70 MKF/F</h3>
+              <p class="product-card__desc">
+                Kompaktowy silnik rurowy Ø70 mm do rolet komercyjnych średniej wielkości.
+                Wbudowany enkoder, zabezpieczenia termiczne i mechaniczne. Idealne rozwiązanie
+                dla rolet ze skrzynką — montaż bezpośrednio wewnątrz wału rolety.
+              </p>
+              <div class="product-card__specs">
+                <span class="spec-chip">Ø 70 mm</span>
+                <span class="spec-chip">Encoder</span>
+                <span class="spec-chip">230V AC</span>
+                <span class="spec-chip">Ochrona termiczna</span>
+              </div>
+              <div class="product-card__footer">
+                <a href="products/bbs-70mkf.html" class="btn btn--primary" id="card-bbs70-btn">
+                  Szczegóły <span class="arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#kontakt" class="btn btn--outline-dark" id="card-bbs70-contact-btn">
+                  Zapytaj
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BBS 100 TKF/F -->
+          <article class="product-card reveal reveal-delay-2">
+            <div class="product-card__img-wrap">
+              <img
+                src="assets/img/hero-bbs-motor.png"
+                alt="Silnik rolety Gaposa BBS 100 TKF/F"
+                width="600"
+                height="280"
+                loading="lazy"
+              />
+              <span class="product-card__tag">Seria BBS</span>
+            </div>
+            <div class="product-card__body">
+              <div class="product-card__type">Silnik rurowy · Przemysłowy</div>
+              <h3 class="product-card__name">BBS 100 TKF/F</h3>
+              <p class="product-card__desc">
+                Mocny silnik rurowy Ø100 mm do dużych rolet przemysłowych i bram handlowych.
+                Wysoki moment obrotowy, trójfazowy napęd oraz zaawansowany system zabezpieczeń.
+                Przeznaczony do intensywnego, całodobowego użytkowania.
+              </p>
+              <div class="product-card__specs">
+                <span class="spec-chip">Ø 100 mm</span>
+                <span class="spec-chip">3-fazowy</span>
+                <span class="spec-chip">Encoder</span>
+                <span class="spec-chip">Heavy-Duty</span>
+              </div>
+              <div class="product-card__footer">
+                <a href="products/bbs-100tkf.html" class="btn btn--primary" id="card-bbs100-btn">
+                  Szczegóły <span class="arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#kontakt" class="btn btn--outline-dark" id="card-bbs100-contact-btn">
+                  Zapytaj
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- "Więcej wkrótce" note -->
+        <p class="reveal" style="text-align:center;margin-top:2.5rem;font-size:0.85rem;color:var(--color-text-light);">
+          Oferta produktowa stale się rozszerza. Zapytaj nas o inne produkty z oferty Gaposa.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         DLACZEGO MY
+    ═══════════════════════════════════════════════ -->
+    <section class="why section-pad" id="dlaczego-my" aria-label="Dlaczego warto wybrać Gaposa Polska">
+      <div class="container">
+        <div class="why__grid">
+          <!-- Left col: title -->
+          <div class="reveal">
+            <span class="label-tag label-tag--white">Nasze atuty</span>
+            <h2 class="section-title section-title--white">Dlaczego<br>warto wybrać<br>Gaposa?</h2>
+            <p class="section-subtitle section-subtitle--white" style="margin-top:1.5rem;">
+              Łączymy włoską jakość z lokalnym wsparciem — dostarczamy nie tylko produkt,
+              ale kompletne rozwiązanie dla Twojej firmy.
+            </p>
+            <a href="#kontakt" class="btn btn--primary" style="margin-top:2rem;" id="why-cta-btn">
+              Porozmawiajmy
+            </a>
+          </div>
+
+          <!-- Right col: cards -->
+          <div class="why__cards">
+            <div class="why-card reveal reveal-delay-1">
+              <div class="why-card__icon" aria-hidden="true">🏆</div>
+              <div class="why-card__title">Autoryzacja producenta</div>
+              <div class="why-card__text">Działamy z oficjalną autoryzacją Gaposa S.r.l. — gwarantujemy oryginalne produkty i pełną gwarancję producenta.</div>
+            </div>
+            <div class="why-card reveal reveal-delay-2">
+              <div class="why-card__icon" aria-hidden="true">🚚</div>
+              <div class="why-card__title">Ekspresowa dostawa</div>
+              <div class="why-card__text">Magazyn w Polsce. Standardowe modele dostępne z wysyłką nawet w 24h od złożenia zamówienia.</div>
+            </div>
+            <div class="why-card reveal reveal-delay-3">
+              <div class="why-card__icon" aria-hidden="true">🔧</div>
+              <div class="why-card__title">Wsparcie instalatora</div>
+              <div class="why-card__text">Szkolenia techniczne, dokumentacja w języku polskim i dedykowany doradca dla firm instalacyjnych.</div>
+            </div>
+            <div class="why-card reveal reveal-delay-4">
+              <div class="why-card__icon" aria-hidden="true">💼</div>
+              <div class="why-card__title">Warunki B2B</div>
+              <div class="why-card__text">Atrakcyjne rabaty dla instalatorów i firm budowlanych. Indywidualne warunki dla stałych klientów.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CTA BANNER
+    ═══════════════════════════════════════════════ -->
+    <section class="cta-section section-pad" aria-label="Wezwanie do działania">
+      <div class="container">
+        <div class="cta-section__inner">
+          <div>
+            <h2 class="cta-section__title">Gotowy na kolejny projekt?<br>Zadzwoń lub napisz.</h2>
+            <p class="cta-section__sub">Bezpłatna wycena i dobór produktu do Twojej aplikacji.</p>
+          </div>
+          <div class="cta-section__actions">
+            <a href="tel:+48000000000" class="btn btn--outline" id="cta-phone-btn">
+              📞 &nbsp;+48 000 000 000
+            </a>
+            <a href="#kontakt" class="btn" style="background:var(--color-white);color:var(--color-primary);font-weight:700;" id="cta-form-btn">
+              Formularz kontaktowy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         KONTAKT
+    ═══════════════════════════════════════════════ -->
+    <section class="contact section-pad" id="kontakt" aria-label="Formularz kontaktowy">
+      <div class="container">
+        <div class="contact__grid">
+          <!-- Info -->
+          <div class="reveal">
+            <span class="label-tag label-tag--white">Kontakt</span>
+            <h2 class="section-title section-title--white" style="margin-bottom:2rem;">
+              Skontaktuj<br>się z nami
+            </h2>
+
+            <div class="contact__info-block">
+              <div class="contact__info-item">
+                <div class="contact__info-icon" aria-hidden="true">📍</div>
+                <div>
+                  <div class="contact__info-label">Adres</div>
+                  <div class="contact__info-val">ul. Przykładowa 1, 00-000 Warszawa</div>
+                </div>
+              </div>
+              <div class="contact__info-item">
+                <div class="contact__info-icon" aria-hidden="true">📞</div>
+                <div>
+                  <div class="contact__info-label">Telefon</div>
+                  <div class="contact__info-val">
+                    <a href="tel:+48000000000">+48 000 000 000</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact__info-item">
+                <div class="contact__info-icon" aria-hidden="true">✉️</div>
+                <div>
+                  <div class="contact__info-label">E-mail</div>
+                  <div class="contact__info-val">
+                    <a href="mailto:biuro@gaposapolska.pl">biuro@gaposapolska.pl</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact__info-item">
+                <div class="contact__info-icon" aria-hidden="true">🕐</div>
+                <div>
+                  <div class="contact__info-label">Godziny pracy</div>
+                  <div class="contact__info-val">Pn–Pt: 8:00–17:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="reveal reveal-delay-1">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name">Imię i nazwisko *</label>
+                  <input type="text" id="form-name" name="name" placeholder="Jan Kowalski" required />
+                </div>
+                <div class="form-group">
+                  <label for="form-company">Firma</label>
+                  <input type="text" id="form-company" name="company" placeholder="Nazwa firmy" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-email">Adres e-mail *</label>
+                  <input type="email" id="form-email" name="email" placeholder="jan@firma.pl" required />
+                </div>
+                <div class="form-group">
+                  <label for="form-phone">Telefon</label>
+                  <input type="tel" id="form-phone" name="phone" placeholder="+48 000 000 000" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="form-product">Interesujący produkt</label>
+                <select id="form-product" name="product">
+                  <option value="">Wybierz produkt…</option>
+                  <option value="bbs70">BBS 70 MKF/F</option>
+                  <option value="bbs100">BBS 100 TKF/F</option>
+                  <option value="other">Inny / Nie wiem</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Wiadomość *</label>
+                <textarea id="form-message" name="message" placeholder="Opisz swoje zapotrzebowanie, ilości, zastosowanie…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" id="contact-submit-btn" style="align-self:flex-start;margin-top:0.5rem;">
+                Wyślij zapytanie <span class="arrow" aria-hidden="true">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <img src="assets/img/gaposa-logo.svg" alt="Gaposa logo" width="120" height="30" />
+          <p>
+            Autoryzowany dystrybutor włoskiej marki Gaposa na terenie Polski.
+            Profesjonalna automatyka roletowa i bramowa dla wymagających instalatorów i generałów.
+          </p>
+          <span class="footer__brand-tag">Autoryzowany Dystrybutor · Polska</span>
+        </div>
+
+        <!-- Nawigacja -->
+        <div>
+          <div class="footer__col-title">Strona</div>
+          <ul class="footer__links">
+            <li><a href="#o-nas">O nas</a></li>
+            <li><a href="#produkty">Produkty</a></li>
+            <li><a href="#dlaczego-my">Dlaczego my</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Produkty -->
+        <div>
+          <div class="footer__col-title">Produkty</div>
+          <ul class="footer__links">
+            <li><a href="products/bbs-70mkf.html">BBS 70 MKF/F</a></li>
+            <li><a href="products/bbs-100tkf.html">BBS 100 TKF/F</a></li>
+            <li><a href="https://www.gaposa.it/eng" target="_blank" rel="noopener noreferrer">Gaposa.it</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2025 Gaposa Polska. Wszelkie prawa zastrzeżone.</p>
+        <div class="footer__gaposa-badge">
+          Dystrybutor marki <span>Gaposa</span> S.r.l. · Fermo, Włochy
+        </div>
+        <div class="footer__bottom-links">
+          <a href="#">Polityka prywatności</a>
+          <a href="#">Pliki cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

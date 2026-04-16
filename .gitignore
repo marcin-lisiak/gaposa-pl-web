@@ -1,0 +1,14 @@
+# Source Materials
+Materiały/
+
+# System / IDE
+.gemini/
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Images that are already copied to assets
+*.png
+*.jpg
+*.jpeg
+!assets/img/*
