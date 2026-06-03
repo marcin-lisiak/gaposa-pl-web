@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O marce Gaposa — Włoski producent napędów | Cezab Distribution</title>
+  <meta name="description"
+    content="Poznaj markę Gaposa — włoskiego producenta napędów i automatyki założonego w 1969 roku. Historia, R&D, włoska produkcja, jakość i wartości marki." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── PAGE HERO ───────────────────────────────────────── */
+    .page-hero {
+      padding-top: calc(68px + 5rem);
+      padding-bottom: 5rem;
+      background: var(--c-bg);
+      border-bottom: 1px solid var(--c-rule);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/img/Szkielet\ napędu.png');
+      background-position: right -80px center;
+      background-repeat: no-repeat;
+      background-size: 40%;
+      opacity: 0.06;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 55% 70% at 85% 50%, black 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 55% 70% at 85% 50%, black 20%, transparent 100%);
+    }
+
+    .page-hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: var(--space-sm);
+    }
+
+    .page-hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--c-accent);
+    }
+
+    .page-hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.02em;
+      color: var(--c-ink);
+      margin-bottom: var(--space-md);
+      max-width: 14ch;
+    }
+
+    .page-hero-title em {
+      color: var(--c-accent);
+      font-style: normal;
+    }
+
+    .page-hero-lead {
+      font-size: 1.1rem;
+      color: var(--c-ink-mid);
+      max-width: 52ch;
+      line-height: 1.75;
+    }
+
+    .page-hero-stats {
+      display: flex;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+      flex-wrap: wrap;
+    }
+
+    .page-hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+    }
+
+    .page-hero-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--c-accent);
+    }
+
+    .page-hero-stat-label {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-ink-faint);
+    }
+
+    .italian-ribbon {
+      position: absolute;
+      top: -10%;
+      right: 12%;
+      bottom: -10%;
+      width: 80px;
+      background: linear-gradient(to bottom, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce2b37 66.6%);
+      box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+      z-index: 0;
+      transform: rotate(15deg);
+    }
+
+    /* ── BRAND SPLIT ─────────────────────────────────────── */
+    .brand-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    .story-highlight {
+      border: 1px solid var(--c-rule);
+      background: var(--c-surface);
+      padding: var(--space-md);
+      margin-top: var(--space-md);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+    }
+
+    .story-proof {
+      border-left: 1px solid var(--c-rule);
+      padding-left: var(--space-sm);
+    }
+
+    .story-proof:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .story-proof strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.7rem;
+      line-height: 1;
+      color: var(--c-accent);
+      margin-bottom: .35rem;
+    }
+
+    .story-proof span {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-ink-faint);
+      line-height: 1.35;
+    }
+
+    .history-section {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+    }
+
+    .history-intro {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: var(--space-xl);
+      align-items: end;
+      margin-bottom: var(--space-xl);
+    }
+
+    .history-lead {
+      color: var(--c-ink-mid);
+      line-height: 1.75;
+      max-width: 58ch;
+      margin-left: auto;
+    }
+
+    .history-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--c-rule);
+      border: 1px solid var(--c-rule);
+    }
+
+    .history-item {
+      background: var(--c-bg);
+      padding: var(--space-md);
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background var(--t-fast), transform var(--t-fast);
+    }
+
+    .history-item:hover {
+      background: var(--c-surface);
+      transform: translateY(-2px);
+    }
+
+    .history-year {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.3rem;
+      line-height: 1;
+      color: var(--c-accent);
+      margin-bottom: var(--space-md);
+    }
+
+    .history-item h3 {
+      font-size: 1.05rem;
+      color: var(--c-ink);
+      margin-bottom: .45rem;
+    }
+
+    .history-item p {
+      font-size: .88rem;
+      color: var(--c-ink-mid);
+      line-height: 1.65;
+    }
+
+    /* ── VALUES SECTION ──────────────────────────────────── */
+    .values-section {
+      background: var(--c-dark);
+      color: var(--c-on-dark);
+    }
+
+    .values-section .section-title {
+      color: #fff;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .value-card {
+      border: 1px solid rgba(255, 255, 255, .1);
+      padding: var(--space-md);
+    }
+
+    .value-card-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      color: var(--c-accent);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .value-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .4rem;
+    }
+
+    .value-card p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.7;
+    }
+
+    /* ── CERT STRIP ──────────────────────────────────────── */
+    .cert-strip {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xl);
+      padding: var(--space-xl) 0;
+      border-top: 1px solid var(--c-rule);
+      margin-top: var(--space-xl);
+      flex-wrap: wrap;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: .88rem;
+      color: var(--c-ink-mid);
+      font-weight: 500;
+    }
+
+    .cert-icon {
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--c-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .85rem;
+      font-weight: 900;
+      color: var(--c-accent);
+      flex-shrink: 0;
+    }
+
+    /* ── BREADCRUMB ──────────────────────────────────────── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      color: var(--c-ink-faint);
+      margin-bottom: var(--space-md);
+    }
+
+    .breadcrumb a {
+      color: var(--c-ink-faint);
+      transition: color var(--t-fast);
+    }
+
+    .breadcrumb a:hover { color: var(--c-accent); }
+    .breadcrumb-sep { opacity: .4; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .brand-split { grid-template-columns: 1fr; }
+      .history-intro { grid-template-columns: 1fr; }
+      .history-lead { margin-left: 0; }
+      .history-timeline { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .page-hero-stats { gap: var(--space-lg); }
+    }
+
+    @media (max-width: 640px) {
+      .page-hero-stats { flex-direction: column; gap: var(--space-md); }
+      .story-highlight { grid-template-columns: 1fr; }
+      .story-proof,
+      .story-proof:first-child {
+        border-left: 0;
+        border-top: 1px solid var(--c-rule);
+        padding-left: 0;
+        padding-top: var(--space-sm);
+      }
+      .story-proof:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .history-timeline,
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════ HEADER ═══ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="Gaposa – strona główna">
+        <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa by D" class="logo-img" />
+      </a>
+
+      <nav class="header-nav" aria-label="Nawigacja główna">
+        <ul class="nav-list">
+          <li><a href="index.html#produkty" class="nav-link">Produkty</a></li>
+          <li><a href="o-marce.html" class="nav-link nav-link--active">O Marce</a></li>
+          <li><a href="index.html#wsparcie" class="nav-link">Wsparcie techniczne</a></li>
+          <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-socials">
+          <a href="#" class="social-icon-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon-link" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Otwórz menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html#produkty" class="mobile-nav-link">Produkty</a></li>
+        <li><a href="o-marce.html" class="mobile-nav-link">O Marce</a></li>
+        <li><a href="index.html#wsparcie" class="mobile-nav-link">Wsparcie techniczne</a></li>
+        <li><a href="index.html#kontakt" class="mobile-nav-link">Kontakt</a></li>
+        <li><a href="index.html#kontakt" class="btn btn-primary" style="display:inline-block;margin-top:1rem;">Zapytaj o
+            ofertę</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════ PAGE HERO ═══ -->
+    <section class="page-hero">
+      <div class="italian-ribbon"></div>
+      <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="index.html">Strona główna</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>O marce</span>
+        </nav>
+        <span class="page-hero-eyebrow">O marce</span>
+        <h1 class="page-hero-title">Włoska marka, <em>globalna jakość</em></h1>
+        <p class="page-hero-lead">
+          Gaposa to włoski producent specjalizujący się w napędach do bram,
+          osłon przeciwsłonecznych i systemów automatyki. Od 1969 roku rozwija własne
+          rozwiązania, inwestuje w R&D i utrzymuje produkcję w całości we Włoszech.
+        </p>
+        <div class="page-hero-stats">
+          <div class="page-hero-stat">
+            <span class="page-hero-stat-val">1969</span>
+            <span class="page-hero-stat-label">Początek marki</span>
+          </div>
+          <div class="page-hero-stat">
+            <span class="page-hero-stat-val">30+</span>
+            <span class="page-hero-stat-label">Krajów eksportu</span>
+          </div>
+          <div class="page-hero-stat">
+            <span class="page-hero-stat-val">100%</span>
+            <span class="page-hero-stat-label">Made in Italy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ BRAND SPLIT ═══ -->
+    <section class="section-pad">
+      <div class="container brand-split">
+        <div class="about-image-col reveal">
+          <div class="about-image-frame">
+            <img
+              src="assets/img/Szkielet napędu.png"
+              alt="Budowa napędu Gaposa — precyzja włoskiej inżynierii"
+              class="about-img"
+            />
+          </div>
+          <div class="about-image-caption">
+            <span>Wyprodukowano we Włoszech</span>
+            <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa logo" class="about-badge-logo" />
+          </div>
+        </div>
+
+        <div class="about-text-col reveal reveal-delay-1">
+          <span class="label-tag">Nasza historia</span>
+          <h2 class="section-title">Od warsztatu do międzynarodowej automatyki</h2>
+          <p class="about-body">
+            Gaposa powstała w 1969 roku z inicjatywy Cesare Gasparriniego i Dantego Postachiniego.
+            Już w pierwszym roku działalności firma wprowadziła pierwsze napędy do rolet i stalowych
+            bram rolowanych. Ten praktyczny początek dobrze tłumaczy charakter marki: mniej obietnic,
+            więcej mechaniki, testów i konsekwentnego rozwoju produktu.
+          </p>
+          <p class="about-body" style="margin-top: 1rem;">
+            Kolejne dekady to rozwój napędów bocznych do dużych bram przemysłowych, systemów
+            bezpieczeństwa, elektroniki sterującej i rozwiązań do bram szybkobieżnych. Gaposa
+            rosła razem z rynkiem, ale zachowała istotną przewagę: projektowanie, produkcję,
+            R&D i kontrolę jakości blisko siebie, we włoskim Fermo.
+          </p>
+
+          <div class="story-highlight">
+            <div class="story-proof">
+              <strong>R&D</strong>
+              <span>Stała polityka rozwoju i patenty</span>
+            </div>
+            <div class="story-proof">
+              <strong>4</strong>
+              <span>Spółki zagraniczne Gaposa</span>
+            </div>
+            <div class="story-proof">
+              <strong>6000 m²</strong>
+              <span>Nowa siedziba produkcyjna od 2005</span>
+            </div>
+          </div>
+
+          <div class="cert-strip">
+            <div class="cert-item">
+              <div class="cert-icon">Q</div>
+              <span>Certyfikat ISO 9001</span>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">EU</div>
+              <span>Zgodność z dyrektywami UE</span>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon">🇮🇹</div>
+              <span>Made in Italy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history-section section-pad">
+      <div class="container">
+        <div class="history-intro">
+          <div>
+            <span class="label-tag">Kamienie milowe</span>
+            <h2 class="section-title">Historia zapisana w produktach</h2>
+          </div>
+          <p class="history-lead">
+            Najważniejsze momenty Gaposa nie są tylko datami z folderu firmowego. To kolejne
+            generacje rozwiązań dla instalatorów: łatwiejszy montaż, bezpieczniejsza praca bram,
+            własna elektronika i coraz szybsza obsługa klientów na wielu rynkach.
+          </p>
+        </div>
+
+        <div class="history-timeline">
+          <article class="history-item reveal">
+            <div class="history-year">1969</div>
+            <div>
+              <h3>Pierwsze napędy</h3>
+              <p>Start Gaposa srl oraz pierwsze modele napędów do rolet i stalowych bram rolowanych.</p>
+            </div>
+          </article>
+          <article class="history-item reveal reveal-delay-1">
+            <div class="history-year">1979</div>
+            <div>
+              <h3>Sidemotor</h3>
+              <p>Pierwszy boczny napęd do dużych bram przemysłowych, ceniony za solidność i niezawodność.</p>
+            </div>
+          </article>
+          <article class="history-item reveal reveal-delay-2">
+            <div class="history-year">1980</div>
+            <div>
+              <h3>Split</h3>
+              <p>Centralny napęd o konstrukcji ułatwiającej szybki montaż bez cięcia rury i spawania.</p>
+            </div>
+          </article>
+          <article class="history-item reveal reveal-delay-3">
+            <div class="history-year">1997</div>
+            <div>
+              <h3>Bramy segmentowe</h3>
+              <p>Powstaje gama napędów SCZ do bram segmentowych, ważny krok w stronę rynku przemysłowego.</p>
+            </div>
+          </article>
+          <article class="history-item reveal">
+            <div class="history-year">2005</div>
+            <div>
+              <h3>Nowa siedziba</h3>
+              <p>Produkcja, sprzedaż i R&D trafiają do jednego zakładu, co skraca drogę od pomysłu do produktu.</p>
+            </div>
+          </article>
+          <article class="history-item reveal reveal-delay-1">
+            <div class="history-year">2010</div>
+            <div>
+              <h3>Własna elektronika</h3>
+              <p>Gaposa zaczyna produkować wewnętrznie większość elektroniki: centrale, czujniki i nadajniki.</p>
+            </div>
+          </article>
+          <article class="history-item reveal reveal-delay-2">
+            <div class="history-year">2018</div>
+            <div>
+              <h3>RAPIDO</h3>
+              <p>Linia napędów bocznych do bram szybkobieżnych i składanych poszerza ofertę automatyki przemysłowej.</p>
+            </div>
+          </article>
+          <article class="history-item reveal reveal-delay-3">
+            <div class="history-year">2020</div>
+            <div>
+              <h3>RollApp</h3>
+              <p>Marka wchodzi w rozwiązania smart, oferując własną aplikację do zdalnego sterowania automatyką radiową.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ VALUES ═══ -->
+    <section class="values-section section-pad">
+      <div class="container">
+        <span class="label-tag" style="color: rgba(255,255,255,.5);">Dlaczego Gaposa</span>
+        <h2 class="section-title" style="color:#fff; margin-top: .5rem;">Wartości, które widać w produkcie</h2>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="value-card-num">01</div>
+            <h3>Ludzie</h3>
+            <p>Gaposa podkreśla znaczenie zespołu, bezpieczeństwa pracy i kompetencji, które później
+              przekładają się na powtarzalność produkcji.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-1">
+            <div class="value-card-num">02</div>
+            <h3>Współpraca</h3>
+            <p>Długie relacje z klientami, dystrybutorami i dostawcami są częścią modelu działania,
+              nie dodatkiem do sprzedaży.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-2">
+            <div class="value-card-num">03</div>
+            <h3>Innowacja</h3>
+            <p>Rozwój obejmuje produkt, produkcję i organizację firmy, dzięki czemu nowe rozwiązania
+              szybciej trafiają do instalatorów.</p>
+          </div>
+          <div class="value-card reveal reveal-delay-3">
+            <div class="value-card-num">04</div>
+            <h3>Zrównoważenie</h3>
+            <p>Firma stawia na systemy pomagające oszczędzać energię oraz ograniczanie odpadów
+              w codziennej produkcji.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ CTA ═══ -->
+    <section class="section-pad" style="background: var(--c-accent-pale); border-top: 1px solid var(--c-rule);">
+      <div class="container" style="text-align: center; max-width: 640px;">
+        <span class="label-tag">Zainteresowany?</span>
+        <h2 class="section-title" style="margin-top: .5rem; margin-bottom: 1rem;">
+          Mamy produkty Gaposa w Polsce
+        </h2>
+        <p style="color: var(--c-ink-mid); margin-bottom: 2rem; line-height: 1.75;">
+          Cezab Distribution jest wyłącznym autoryzowanym dystrybutorem Gaposa w Polsce.
+          Skontaktuj się z nami, aby dobrać odpowiednie rozwiązanie.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html#kontakt" class="btn btn-primary btn-lg">Zapytaj o ofertę</a>
+          <a href="index.html#produkty" class="btn btn-outline btn-lg">Zobacz produkty</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════ FOOTER ═══ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa by D" class="footer-logo" />
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-heading">Produkty</h4>
+        <ul>
+          <li><a href="index.html#produkty">Napędy do bram</a></li>
+          <li><a href="index.html#produkty">Centrale sterujące</a></li>
+          <li><a href="index.html#produkty">Akcesoria</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-heading">Firma</h4>
+        <ul>
+          <li><a href="o-marce.html">O marce Gaposa</a></li>
+          <li><a href="index.html#dystrybutor">Cezab Distribution</a></li>
+          <li><a href="index.html#wsparcie">Wsparcie techniczne</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h4 class="footer-heading">Kontakt</h4>
+        <p><a href="mailto:biuro@cezab-distribution.pl">biuro@cezab-distribution.pl</a></p>
+        <p><a href="tel:+48627205430">+48 62 720 54 30</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2025 Cezab Distribution sp. z o.o. Autoryzowany dystrybutor Gaposa w Polsce.</span>
+        <span>Wszelkie prawa zastrzeżone.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

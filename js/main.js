@@ -1,180 +1,261 @@
-/**
- * GAPOSA POLSKA — Main JavaScript
- * Polish Distributor of Gaposa Italiana
- */
+// ═══ HERO SLIDER ═══
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.hero-dot');
+const heroPrevBtn = document.getElementById('hero-prev');
+const heroNextBtn = document.getElementById('hero-next');
+const heroProgressFill = document.getElementById('hero-progress-fill');
+const heroCurrentLabel = document.getElementById('hero-slide-current');
+let heroIndex = 0;
+let heroInterval = null;
+const HERO_DELAY = 6000;
 
-document.addEventListener('DOMContentLoaded', () => {
+function heroGoTo(index) {
+  heroSlides[heroIndex].classList.remove('active');
+  heroIndex = ((index % heroSlides.length) + heroSlides.length) % heroSlides.length;
+  heroSlides[heroIndex].classList.add('active');
+  heroDots.forEach((d, i) => d.classList.toggle('active', i === heroIndex));
+  if (heroCurrentLabel) heroCurrentLabel.textContent = String(heroIndex + 1).padStart(2, '0');
+  resetHeroProgress();
+}
 
-  // ── Navbar scroll behaviour ──────────────────────────────────
-  const navbar = document.getElementById('navbar');
-
-  const updateNavbar = () => {
-    if (window.scrollY > 60) {
-      navbar.classList.add('navbar--solid');
-      navbar.classList.remove('navbar--transparent');
-    } else {
-      navbar.classList.remove('navbar--solid');
-      navbar.classList.add('navbar--transparent');
-    }
-  };
-
-  window.addEventListener('scroll', updateNavbar, { passive: true });
-  updateNavbar();
-
-  // ── Mobile nav ───────────────────────────────────────────────
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
-  const mobileClose = document.getElementById('mobile-close');
-
-  const openMobileNav = () => {
-    mobileNav.classList.add('mobile-nav--open');
-    document.body.style.overflow = 'hidden';
-    hamburger.setAttribute('aria-expanded', 'true');
-  };
-
-  const closeMobileNav = () => {
-    mobileNav.classList.remove('mobile-nav--open');
-    document.body.style.overflow = '';
-    hamburger.setAttribute('aria-expanded', 'false');
-  };
-
-  if (hamburger) hamburger.addEventListener('click', openMobileNav);
-  if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
-
-  // close on backdrop click
-  if (mobileNav) {
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target === mobileNav) closeMobileNav();
-    });
-  }
-
-  // ── Scroll reveal ────────────────────────────────────────────
-  const revealEls = document.querySelectorAll('.reveal');
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  // ── Animated counters ────────────────────────────────────────
-  const counters = document.querySelectorAll('[data-count]');
-
-  const animateCounter = (el) => {
-    const target = parseInt(el.getAttribute('data-count'));
-    const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1800;
-    const startTime = performance.now();
-
-    const step = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // easeOutQuart
-      const eased = 1 - Math.pow(1 - progress, 4);
-      const value = Math.round(eased * target);
-      el.textContent = value + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
-  };
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(el => counterObserver.observe(el));
-
-  // ── Contact form ─────────────────────────────────────────────
-  const form = document.getElementById('contact-form');
-
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const submitBtn = form.querySelector('[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span style="opacity:0.7">Wysyłanie…</span>';
-
-      // Simulate send (replace with real endpoint later)
-      await new Promise(r => setTimeout(r, 1400));
-
-      submitBtn.innerHTML = '✓ Wiadomość wysłana!';
-      submitBtn.style.background = '#2a9d8f';
-
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.style.background = '';
-        submitBtn.disabled = false;
-        form.reset();
-      }, 4000);
-    });
-  }
-
-  // ── Active nav link highlighting (for single page) ───────────
-  const navLinks = document.querySelectorAll('.navbar__menu a[href^="#"]');
-  const sections = document.querySelectorAll('section[id]');
-
-  const highlightNavLink = () => {
-    const scrollPos = window.scrollY + 100;
-
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      const id = section.getAttribute('id');
-      const link = document.querySelector(`.navbar__menu a[href="#${id}"]`);
-
-      if (link) {
-        if (scrollPos >= top && scrollPos < bottom) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      }
-    });
-  };
-
-  window.addEventListener('scroll', highlightNavLink, { passive: true });
-
-  // ── Hero parallax (subtle) ───────────────────────────────────
-  const heroBg = document.querySelector('.hero__bg');
-
-  if (heroBg) {
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        heroBg.style.transform = `scale(1.05) translateY(${y * 0.2}px)`;
-      }
-    }, { passive: true });
-  }
-
-  // ── Smooth scrolling for anchor links ────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const href = anchor.getAttribute('href');
-      if (href === '#') return;
-
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        closeMobileNav && closeMobileNav();
-        const navH = parseInt(getComputedStyle(document.documentElement)
-          .getPropertyValue('--nav-height')) || 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - navH;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+function resetHeroProgress() {
+  if (!heroProgressFill) return;
+  heroProgressFill.style.transition = 'none';
+  heroProgressFill.style.width = '0%';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      heroProgressFill.style.transition = `width ${HERO_DELAY}ms linear`;
+      heroProgressFill.style.width = '100%';
     });
   });
+}
 
+function startHeroAutoPlay() {
+  stopHeroAutoPlay();
+  heroInterval = setInterval(() => heroGoTo(heroIndex + 1), HERO_DELAY);
+  resetHeroProgress();
+}
+
+function stopHeroAutoPlay() {
+  clearInterval(heroInterval);
+  heroInterval = null;
+  if (heroProgressFill) {
+    heroProgressFill.style.transition = 'none';
+    heroProgressFill.style.width = '0%';
+  }
+}
+
+// Navigation
+if (heroPrevBtn) heroPrevBtn.addEventListener('click', () => { heroGoTo(heroIndex - 1); startHeroAutoPlay(); });
+if (heroNextBtn) heroNextBtn.addEventListener('click', () => { heroGoTo(heroIndex + 1); startHeroAutoPlay(); });
+heroDots.forEach(dot => dot.addEventListener('click', () => { heroGoTo(Number(dot.dataset.slide)); startHeroAutoPlay(); }));
+
+// Pause on hover
+const heroSection = document.getElementById('hero');
+if (heroSection) {
+  heroSection.addEventListener('mouseenter', stopHeroAutoPlay);
+  heroSection.addEventListener('mouseleave', startHeroAutoPlay);
+}
+
+// Keyboard navigation
+if (heroSection) {
+  heroSection.setAttribute('tabindex', '0');
+  heroSection.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') { heroGoTo(heroIndex - 1); startHeroAutoPlay(); }
+    if (e.key === 'ArrowRight') { heroGoTo(heroIndex + 1); startHeroAutoPlay(); }
+  });
+}
+
+// Start auto-play
+if (heroSlides.length > 1) startHeroAutoPlay();
+
+
+
+// ═══ HEADER SCROLL ═══
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ═══ HAMBURGER ═══
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileNav = document.getElementById('mobile-nav');
+hamburgerBtn.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  hamburgerBtn.classList.toggle('open', isOpen);
+  hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+  mobileNav.setAttribute('aria-hidden', String(!isOpen));
 });
+mobileNav.querySelectorAll('a, .btn').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburgerBtn.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  });
+});
+
+// ═══ PRODUCT SLIDER ═══
+const slides = document.querySelectorAll('.product-slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('slider-prev');
+const nextBtn = document.getElementById('slider-next');
+const currentLabel = document.getElementById('slide-current');
+const totalLabel = document.getElementById('slide-total');
+let currentIndex = 0;
+const total = slides.length;
+if (totalLabel) totalLabel.textContent = String(total).padStart(2, '0');
+
+function goToSlide(index) {
+  const prev = currentIndex;
+  slides[prev].classList.add('exit-left');
+  slides[prev].classList.remove('active');
+  currentIndex = index;
+  slides[currentIndex].classList.remove('exit-left');
+  slides[currentIndex].classList.add('active');
+  dots.forEach((d, i) => {
+    d.classList.toggle('active', i === currentIndex);
+    d.setAttribute('aria-selected', String(i === currentIndex));
+  });
+  if (prevBtn) prevBtn.disabled = currentIndex === 0;
+  if (nextBtn) nextBtn.disabled = currentIndex === total - 1;
+  if (currentLabel) currentLabel.textContent = String(currentIndex + 1).padStart(2, '0');
+  setTimeout(() => slides[prev].classList.remove('exit-left'), 500);
+}
+if (slides[0]) slides[0].classList.add('active');
+if (prevBtn) prevBtn.disabled = true;
+if (nextBtn && total <= 1) nextBtn.disabled = true;
+if (prevBtn) prevBtn.addEventListener('click', () => { if (currentIndex > 0) goToSlide(currentIndex - 1); });
+if (nextBtn) nextBtn.addEventListener('click', () => { if (currentIndex < total - 1) goToSlide(currentIndex + 1); });
+dots.forEach(dot => dot.addEventListener('click', () => goToSlide(Number(dot.dataset.index))));
+
+const sliderEl = document.getElementById('product-slider');
+if (sliderEl) {
+  sliderEl.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' && currentIndex > 0) goToSlide(currentIndex - 1);
+    if (e.key === 'ArrowRight' && currentIndex < total - 1) goToSlide(currentIndex + 1);
+  });
+}
+
+// ═══ PRODUCT TABS ═══
+document.querySelectorAll('.product-tabs').forEach(tabGroup => {
+  const btns = tabGroup.querySelectorAll('.tab-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.tab;
+      const slide = btn.closest('.product-slide') || btn.closest('.product-info-col');
+      const allPanels = (slide || document).querySelectorAll('.tab-panel');
+      const allBtns = tabGroup.querySelectorAll('.tab-btn');
+      allBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      allPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(targetId);
+      if (panel) panel.classList.add('active');
+    });
+  });
+});
+
+// ═══ KONFIGURATOR ═══
+const products = {
+  garażowa: { 
+    maly: { name:'BBS 100TKF 1', desc:'Idealny siłownik do małych i średnich bram garażowych w domach jednorodzinnych.', specs:['100 Nm','230V AC','IP44','Precyzja'], match:95 },
+    sredni: { name:'BBS 100TKF 1 + Centrala', desc:'Zestaw do większych bram garażowych z zaawansowanym sterowaniem.', specs:['100 Nm','Centrala','Safe-Link'], match:92 },
+    duzy: { name:'BBS 100TKF 1 Premium', desc:'Najmocniejszy zestaw do bram rezydencjalnych o dużej wadze.', specs:['120 Nm','Centrala','Soft-Start'], match:88 } 
+  },
+  przemysłowa: { 
+    maly: { name:'BBS 100TKF 1', desc:'Idealny siłownik do standardowych bram segmentowych w magazynach.', specs:['100 Nm','400V AC','IP54','400 kg'], match:95 },
+    sredni: { name:'BBS 100TKF 1 + QC40F', desc:'Kompletny zestaw napędowy do bram szybkobieżnych w halach produkcyjnych.', specs:['100 Nm','Centrala QC40F','IP54','21 obr/min'], match:94 },
+    duzy: { name:'BBS 100TKF Industrial Plus', desc:'System napędowy do najcięższych bram przemysłowych i przeładunkowych.', specs:['400V AC','Praca ciągła','IP54','400 kg'], match:97 } 
+  },
+  automatyka: { 
+    maly: { name:'Centrala QC40F Basic', desc:'Podstawowy moduł sterujący do napędów 3-fazowych.', specs:['400V AC','IP54'], match:93 },
+    sredni: { name:'Centrala QC40F Pro', desc:'Zaawansowana centrala sterująca z obsługą zabezpieczeń OSE/8k2.', specs:['3~ 400V','IP54','Safe-Link'], match:96 },
+    duzy: { name:'Zestaw QC40F Multi', desc:'Zintegrowane sterowanie wieloma bramami z obsługą semaforów.', specs:['400V AC','Obsługa śluz','IP54'], match:98 } 
+  }
+};
+
+let selectedType = null;
+let selectedSize = null;
+
+const configTypeEl = document.getElementById('config-type');
+const configSizeEl = document.getElementById('config-size');
+const configStep2Label = document.getElementById('config-step2-label');
+const configResultEl = document.getElementById('config-result');
+const configEmpty = document.getElementById('config-empty');
+const configOutput = document.getElementById('config-output');
+
+function showResult() {
+  if (!selectedType || !selectedSize) return;
+  const p = products[selectedType]?.[selectedSize];
+  if (!p) return;
+  document.getElementById('cr-name').textContent = p.name;
+  document.getElementById('cr-desc').textContent = p.desc;
+  const chips = document.getElementById('cr-chips');
+  chips.innerHTML = p.specs.map(s => `<span class="config-chip">${s}</span>`).join('');
+  configEmpty.style.display = 'none';
+  configOutput.style.display = 'block';
+  configResultEl.classList.add('has-result');
+  // Animate match bar
+  const fill = document.getElementById('cr-match');
+  fill.style.width = '0%';
+  setTimeout(() => { fill.style.width = p.match + '%'; }, 50);
+}
+
+if (configTypeEl) {
+  configTypeEl.querySelectorAll('.config-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      configTypeEl.querySelectorAll('.config-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedType = btn.dataset.type;
+      selectedSize = null;
+      configSizeEl.querySelectorAll('.config-option').forEach(b => b.classList.remove('selected'));
+      configSizeEl.style.opacity = '1';
+      configSizeEl.style.pointerEvents = 'auto';
+      configStep2Label.style.opacity = '1';
+      configOutput.style.display = 'none';
+      configEmpty.style.display = 'block';
+      configResultEl.classList.remove('has-result');
+    });
+  });
+}
+
+if (configSizeEl) {
+  configSizeEl.querySelectorAll('.config-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      configSizeEl.querySelectorAll('.config-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedSize = btn.dataset.size;
+      showResult();
+    });
+  });
+}
+
+// ═══ SCROLL REVEAL ═══
+const revealEls = document.querySelectorAll('.reveal:not(.hero .reveal)');
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ═══ CONTACT FORM ═══
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = document.getElementById('contact-submit');
+    btn.textContent = 'Wysłano ✓';
+    btn.disabled = true;
+    btn.style.background = '#2d8a4e';
+    btn.style.borderColor = '#2d8a4e';
+    setTimeout(() => {
+      btn.textContent = 'Wyślij zapytanie';
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      contactForm.reset();
+    }, 3500);
+  });
+}

@@ -1,535 +1,637 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gaposa Polska – Autoryzowany Dystrybutor | Silniki do rolet i bram</title>
-  <meta name="description" content="Gaposa Polska – autoryzowany dystrybutor włoskiej marki Gaposa. Profesjonalne silniki do rolet, markiz i bram przemysłowych. Seria BBS – niezawodna automatyka rolkowa." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://gaposapolska.pl/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Gaposa Polska – Autoryzowany Dystrybutor" />
-  <meta property="og:description" content="Profesjonalne silniki do rolet i bram przemysłowych. Autoryzowany dystrybutor marki Gaposa w Polsce." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pl_PL" />
-
+  <title>Gaposa — Napędy | Automatyka przemysłowa</title>
+  <meta name="description"
+    content="Gaposa — włoskie napędy do bram segmentowych i systemy automatyki przemysłowej. Autoryzowany dystrybutor w Polsce: Cezab Distribution. Precyzja, niezawodność, wsparcie techniczne." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-  <!-- ═══════════════════════════════════════════════
-       NAVBAR
-  ═══════════════════════════════════════════════ -->
-  <nav class="navbar navbar--transparent" id="navbar" role="navigation" aria-label="Główna nawigacja">
-    <div class="navbar__inner">
-      <!-- Logo -->
-      <a href="/" class="navbar__logo" aria-label="Gaposa Polska – strona główna">
-        <img src="assets/img/gaposa-logo.svg" alt="Gaposa logo" width="140" height="36" />
-        <span class="navbar__logo-sub">Dystrybutor<br>Polska</span>
+  <!-- ═══════════════════════════════════════ HEADER ═══ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo" aria-label="Gaposa – strona główna">
+        <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa by D" class="logo-img" />
       </a>
 
-      <!-- Desktop menu -->
-      <ul class="navbar__menu" role="menubar">
-        <li role="none"><a href="#o-nas" role="menuitem">O nas</a></li>
-        <li role="none"><a href="#produkty" role="menuitem">Produkty</a></li>
-        <li role="none"><a href="#dlaczego-my" role="menuitem">Dlaczego my</a></li>
-        <li role="none"><a href="#kontakt" role="menuitem">Kontakt</a></li>
-      </ul>
+      <nav class="header-nav" aria-label="Nawigacja główna">
+        <ul class="nav-list">
+          <li><a href="#produkty" class="nav-link">Produkty</a></li>
+          <li><a href="o-marce.html" class="nav-link">O Marce</a></li>
+          <li><a href="#wsparcie" class="nav-link">Wsparcie techniczne</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
 
-      <!-- CTA + phone -->
-      <div class="navbar__cta">
-        <div class="navbar__contact-info">
-          <span>Bezpłatna wycena</span>
-          <a href="tel:+48627205430" aria-label="Zadzwoń do nas">+48 62 720 54 30</a>
+      <div class="header-actions">
+        <div class="header-socials">
+          <a href="#" class="social-icon-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon-link" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
         </div>
-        <a href="#kontakt" class="btn btn--primary" id="nav-cta-btn">Zapytaj o ofertę</a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Otwórz menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-
-      <!-- Mobile hamburger -->
-      <button class="navbar__hamburger" id="hamburger"
-              aria-label="Otwórz menu" aria-expanded="false"
-              aria-controls="mobile-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
-  </nav>
 
-  <!-- Mobile nav overlay -->
-  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu mobilne">
-    <button class="mobile-nav__close" id="mobile-close" aria-label="Zamknij menu">✕</button>
-    <a href="#o-nas">O nas</a>
-    <a href="#produkty">Produkty</a>
-    <a href="#dlaczego-my">Dlaczego my</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="tel:+48627205430" style="font-size:1.2rem;color:var(--color-primary);">+48 62 720 54 30</a>
-  </div>
+    <!-- Mobile drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="#produkty" class="mobile-nav-link">Produkty</a></li>
+        <li><a href="o-marce.html" class="mobile-nav-link">O Marce</a></li>
+        <li><a href="#wsparcie" class="mobile-nav-link">Wsparcie techniczne</a></li>
+        <li><a href="#kontakt" class="mobile-nav-link">Kontakt</a></li>
+        <li><a href="#kontakt" class="btn btn-primary" style="display:inline-block;margin-top:1rem;">Zapytaj o
+            ofertę</a></li>
+      </ul>
+    </div>
+  </header>
 
   <main>
 
-    <!-- ═══════════════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════════════ -->
-    <section class="hero" id="home" aria-label="Sekcja główna">
-      <div class="hero__bg" aria-hidden="true"></div>
+    <!-- ════════════════════════════════════════ HERO SLIDER ═══ -->
+    <section class="hero-slider" id="hero">
+      <div class="hero-accent-bar"></div>
 
-      <div class="hero__content">
-        <div class="hero__badge">
-          <div class="hero__badge-dot"></div>
-          <span class="hero__badge-text">Autoryzowany dystrybutor · Polska</span>
-        </div>
-
-        <h1 class="hero__title">
-          Włoska precyzja<br>
-          w <span>automatyce</span><br>
-          rolkowej.
-        </h1>
-
-        <p class="hero__desc">
-          Oferujemy profesjonalne silniki Gaposa do rolet, bram komercyjnych i przemysłowych.
-          Niezawodna technologia z ponad 50 lat doświadczenia — dostępna teraz w Polsce.
-        </p>
-
-        <div class="hero__actions">
-          <a href="#produkty" class="btn btn--primary" id="hero-products-btn">
-            Zobacz produkty
-            <span class="arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="#kontakt" class="btn btn--outline" id="hero-contact-btn">
-            Skontaktuj się
-          </a>
+      <!-- Slide 1: Bramy segmentowe -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-inner">
+          <div class="hero-slide-text">
+            <h1 class="hero-slide-title">Napęd do bram<br><em>segmentowych</em></h1>
+            <p class="hero-slide-subtitle">Zestaw BBS 100TKF + QC40F</p>
+            <ul class="hero-features">
+              <li class="hero-feat-group">
+                <span class="hero-feat-label">Mocny</span>
+                <span class="hero-feat-desc">Siła 100&nbsp;Nm — waga bramy do 400&nbsp;kg</span>
+              </li>
+              <li class="hero-feat-group">
+                <span class="hero-feat-label">Niezawodny</span>
+                <span class="hero-feat-desc">Przekładnia w kąpieli olejowej</span>
+              </li>
+              <li class="hero-feat-group">
+                <span class="hero-feat-label">Łatwy w konfiguracji</span>
+                <span class="hero-feat-desc">Wbudowany enkoder</span>
+              </li>
+            </ul>
+            <div class="hero-slide-actions">
+              <a href="#" class="btn btn-primary btn-lg" id="hero-cta-slide-0">Zobacz ulotkę</a>
+              <a href="#" class="btn btn-outline-light btn-lg" id="hero-cta-config-0">Zapytaj o ofertę</a>
+            </div>
+          </div>
+          <div class="hero-slide-image">
+            <img src="assets/img/Zestaw.png" alt="Zestaw napędowy Gaposa BBS 100TKF + QC40F" class="hero-product-img" />
+            <div class="hero-brand-badge">
+              <img src="assets/img/bbs_line.png" alt="BBS line" />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="hero__scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="hero__scroll-line"></div>
+      <!-- Slide 2: Bramy szybkobieżne -->
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-inner">
+          <div class="hero-slide-text">
+            <h2 class="hero-slide-title">Napęd do bram<br><em>szybkobieżnych</em></h2>
+            <p class="hero-slide-subtitle">Zestaw BBS 60130RME + QC600S</p>
+            <ul class="hero-features">
+              <li class="hero-feat-group">
+                <span class="hero-feat-label">Mocny</span>
+                <span class="hero-feat-desc">Moment obrotowy 60 kN</span>
+              </li>
+              <li class="hero-feat-group">
+                <span class="hero-feat-label">Niezawodny</span>
+                <span class="hero-feat-desc">Intensywność użytkowania 45 cykli/godzinę</span>
+              </li>
+              <li class="hero-feat-group">
+                <span class="hero-feat-label">Uniwersalny</span>
+                <span class="hero-feat-desc">Możliwość wyboru średnicy wału 25/25,4/30 mm</span>
+              </li>
+            </ul>
+            <div class="hero-slide-actions">
+              <a href="#" class="btn btn-primary btn-lg" id="hero-cta-slide-1">Zobacz ulotkę</a>
+              <a href="#" class="btn btn-outline-light btn-lg" id="hero-cta-config-1">Zapytaj o ofertę</a>
+            </div>
+          </div>
+          <div class="hero-slide-image">
+            <img src="assets/img/Zestaw_szybkobiezny.png" alt="Napęd Gaposa BBS" class="hero-product-img" />
+            <div class="hero-brand-badge">
+              <img src="assets/img/bbs_line.png" alt="BBS line" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider navigation -->
+      <div class="hero-slider-nav">
+        <button class="hero-slider-btn hero-prev" id="hero-prev" aria-label="Poprzedni slajd">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="hero-slider-dots" id="hero-slider-dots">
+          <button class="hero-dot active" data-slide="0" aria-label="Slajd 1: Bramy segmentowe"></button>
+          <button class="hero-dot" data-slide="1" aria-label="Slajd 2: Bramy szybkobieżne"></button>
+        </div>
+        <button class="hero-slider-btn hero-next" id="hero-next" aria-label="Następny slajd">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Auto-play progress bar -->
+      <div class="hero-progress">
+        <div class="hero-progress-fill" id="hero-progress-fill"></div>
+      </div>
+
+      <!-- Slide counter -->
+      <div class="hero-slider-counter" aria-live="polite">
+        <span id="hero-slide-current">01</span>
+        <span class="counter-sep">/</span>
+        <span id="hero-slide-total">02</span>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         STATS BAR
-    ═══════════════════════════════════════════════ -->
-    <div class="stats-bar" role="region" aria-label="Kluczowe liczby">
-      <div class="container">
-        <div class="stats-bar__inner">
-          <div class="stats-bar__item">
-            <div class="stats-bar__value">
-              <span data-count="50" data-suffix="+">50+</span>
-            </div>
-            <div class="stats-bar__label">Lat na rynku</div>
-          </div>
-          <div class="stats-bar__item">
-            <div class="stats-bar__value">
-              <span data-count="80" data-suffix="+">80+</span>
-            </div>
-            <div class="stats-bar__label">Krajów dystrybucji</div>
-          </div>
-          <div class="stats-bar__item">
-            <div class="stats-bar__value">
-              <span data-count="1000" data-suffix="+">1000+</span>
-            </div>
-            <div class="stats-bar__label">Modeli produktów</div>
-          </div>
-          <div class="stats-bar__item">
-            <div class="stats-bar__value">
-              <span data-count="100" data-suffix="%">100%</span>
-            </div>
-            <div class="stats-bar__label">Made in Italy</div>
-          </div>
-        </div>
-      </div>
+    <!-- ═══════════════════════════════════ STATS BAR ═══ -->
+    <div class="italy-stripe" aria-hidden="true">
+      <div class="italy-green"></div>
+      <div class="italy-white"></div>
+      <div class="italy-red"></div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════
-         O NAS / BRAND
-    ═══════════════════════════════════════════════ -->
-    <section class="about section-pad" id="o-nas" aria-label="O nas">
+    <!-- ══════════════════════════════════ PRODUCTS ═══ -->
+    <section class="products-section section-pad" id="produkty">
       <div class="container">
-        <div class="about__grid">
-          <!-- Image col -->
-          <div class="about__img-wrap reveal">
-            <img
-              src="assets/img/about-section.png"
-              alt="Budynek z rolety handlowe Gaposa"
-              width="600"
-              height="500"
-            />
-            <div class="about__img-accent" aria-hidden="true"></div>
-            <div class="about__img-badge" aria-label="Ponad 50 lat doświadczenia">
-              <div class="about__img-badge-num">50+</div>
-              <div class="about__img-badge-text">Lat<br>doświadczenia</div>
-            </div>
-          </div>
-
-          <!-- Text col -->
-          <div class="reveal reveal-delay-1">
-            <span class="label-tag">O marce</span>
-            <h2 class="section-title">Gaposa — włoski lider<br>automatyki roletowej</h2>
-            <p class="section-subtitle">
-              Gaposa S.r.l. z siedzibą w Fermo (Włochy) to jeden z wiodących producentów silników
-              do rolet, markiz, ekranów projekcyjnych oraz bram przemysłowych. Produkują od 1970 roku,
-              eksportując do ponad 80 krajów na całym świecie.
-            </p>
-            <p class="section-subtitle" style="margin-top:1rem;">
-              Jako autoryzowany dystrybutor na Polskę oferujemy pełen dostęp do portfolio Gaposa —
-              ze wsparciem technicznym, szybką dostawą i obsługą posprzedażową.
-            </p>
-
-            <div class="about__features">
-              <div class="about__feature">
-                <span class="about__feature-icon" aria-hidden="true">🇮🇹</span>
-                <div>
-                  <div class="about__feature-title">Produkcja włoska</div>
-                  <div class="about__feature-text">Wszystkie produkty projektowane i produkowane w Fermo, Włochy</div>
-                </div>
-              </div>
-              <div class="about__feature">
-                <span class="about__feature-icon" aria-hidden="true">🔒</span>
-                <div>
-                  <div class="about__feature-title">Certyfikaty CE</div>
-                  <div class="about__feature-text">Pełna zgodność z normami europejskimi i dyrektywami bezpieczeństwa</div>
-                </div>
-              </div>
-              <div class="about__feature">
-                <span class="about__feature-icon" aria-hidden="true">⚡</span>
-                <div>
-                  <div class="about__feature-title">Szybka dostawa</div>
-                  <div class="about__feature-text">Magazyn w Polsce — wysyłka do 48h od zamówienia</div>
-                </div>
-              </div>
-              <div class="about__feature">
-                <span class="about__feature-icon" aria-hidden="true">🛠️</span>
-                <div>
-                  <div class="about__feature-title">Wsparcie techniczne</div>
-                  <div class="about__feature-text">Dedykowany opiekun techniczny i szkolenia dla instalatorów</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         PRODUKTY
-    ═══════════════════════════════════════════════ -->
-    <section class="products section-pad" id="produkty" aria-label="Nasze produkty">
-      <div class="container">
-        <div class="products__header reveal">
-          <span class="label-tag">W naszej ofercie</span>
-          <h2 class="section-title">Seria BBS</h2>
-          <p class="section-subtitle" style="margin: 0.75rem auto 0; text-align:center;">
-            Przemysłowe silniki rurowe Gaposa do rolet komercyjnych i bram handlowych.
-            Zaprojektowane do intensywnego użytkowania — niezawodność i precyzja w każdym cyklu.
+        <div class="section-header reveal">
+          <span class="label-tag">Oferta</span>
+          <h2 class="section-title">Nasze produkty</h2>
+          <p class="section-lead">
+            Kompletne rozwiązania napędowe do bram segmentowych przemysłowych i garażowych.
           </p>
         </div>
 
-        <div class="products__grid">
+        <!-- Product Slider -->
+        <div class="product-slider" id="product-slider" role="region" aria-label="Slider produktów">
+          <div class="product-slides" id="product-slides">
 
-          <!-- BBS 70 MKF/F -->
-          <article class="product-card reveal reveal-delay-1">
-            <div class="product-card__img-wrap">
-              <img
-                src="assets/img/hero-bbs-motor.png"
-                alt="Silnik rolety Gaposa BBS 70 MKF/F"
-                width="600"
-                height="280"
-                loading="lazy"
-              />
-              <span class="product-card__tag">Seria BBS</span>
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__type">Silnik rurowy · Komercyjny</div>
-              <h3 class="product-card__name">BBS 70 MKF/F</h3>
-              <p class="product-card__desc">
-                Kompaktowy silnik rurowy Ø70 mm do rolet komercyjnych średniej wielkości.
-                Wbudowany enkoder, zabezpieczenia termiczne i mechaniczne. Idealne rozwiązanie
-                dla rolet ze skrzynką — montaż bezpośrednio wewnątrz wału rolety.
-              </p>
-              <div class="product-card__specs">
-                <span class="spec-chip">Ø 70 mm</span>
-                <span class="spec-chip">Encoder</span>
-                <span class="spec-chip">230V AC</span>
-                <span class="spec-chip">Ochrona termiczna</span>
+            <!-- Slide 1: BBS 100TKF — Napęd segmentowy -->
+            <article class="product-slide active" id="slide-silnik" data-index="0">
+              <div class="product-image-col">
+                <div class="product-image-frame">
+                  <img src="assets/img/Napęd.png" alt="Napęd Gaposa BBS 100TKF" class="product-img" />
+                  <div class="product-image-badge">Napęd</div>
+                </div>
               </div>
-              <div class="product-card__footer">
-                <a href="products/bbs-70mkf.html" class="btn btn--primary" id="card-bbs70-btn">
-                  Szczegóły <span class="arrow" aria-hidden="true">→</span>
-                </a>
-                <a href="#kontakt" class="btn btn--outline-dark" id="card-bbs70-contact-btn">
-                  Zapytaj
-                </a>
-              </div>
-            </div>
-          </article>
+              <div class="product-info-col">
+                <span class="product-series segmental">Bramy segmentowe</span>
+                <span class="product-category label-tag">Siłownik do bram</span>
+                <h3 class="product-name">BBS 100TKF</h3>
 
-          <!-- BBS 100 TKF/F -->
-          <article class="product-card reveal reveal-delay-2">
-            <div class="product-card__img-wrap">
-              <img
-                src="assets/img/hero-bbs-motor.png"
-                alt="Silnik rolety Gaposa BBS 100 TKF/F"
-                width="600"
-                height="280"
-                loading="lazy"
-              />
-              <span class="product-card__tag">Seria BBS</span>
-            </div>
-            <div class="product-card__body">
-              <div class="product-card__type">Silnik rurowy · Przemysłowy</div>
-              <h3 class="product-card__name">BBS 100 TKF/F</h3>
-              <p class="product-card__desc">
-                Mocny silnik rurowy Ø100 mm do dużych rolet przemysłowych i bram handlowych.
-                Wysoki moment obrotowy, trójfazowy napęd oraz zaawansowany system zabezpieczeń.
-                Przeznaczony do intensywnego, całodobowego użytkowania.
-              </p>
-              <div class="product-card__specs">
-                <span class="spec-chip">Ø 100 mm</span>
-                <span class="spec-chip">3-fazowy</span>
-                <span class="spec-chip">Encoder</span>
-                <span class="spec-chip">Heavy-Duty</span>
-              </div>
-              <div class="product-card__footer">
-                <a href="products/bbs-100tkf.html" class="btn btn--primary" id="card-bbs100-btn">
-                  Szczegóły <span class="arrow" aria-hidden="true">→</span>
-                </a>
-                <a href="#kontakt" class="btn btn--outline-dark" id="card-bbs100-contact-btn">
-                  Zapytaj
-                </a>
-              </div>
-            </div>
-          </article>
+                <div class="product-tabs" role="tablist" aria-label="Informacje o produkcie">
+                  <button class="tab-btn active" data-tab="p1-opis" role="tab" aria-selected="true">Opis</button>
+                  <button class="tab-btn" data-tab="p1-spec" role="tab" aria-selected="false">Specyfikacja</button>
+                  <button class="tab-btn" data-tab="p1-zastosowania" role="tab" aria-selected="false">Zastosowania</button>
+                </div>
 
-        </div>
+                <div class="tab-panel active" id="p1-opis">
+                  <p class="product-desc">
+                    Wysokiej klasy napęd Gaposa BBS 100TKF przeznaczony do bram segmentowych przemysłowych i garażowych.
+                    Solidna konstrukcja, wysoka kultura pracy i niezawodność potwierdzona latami doświadczeń na rynkach całego świata.
+                  </p>
+                </div>
 
-        <!-- "Więcej wkrótce" note -->
-        <p class="reveal" style="text-align:center;margin-top:2.5rem;font-size:0.85rem;color:var(--color-text-light);">
-          Oferta produktowa stale się rozszerza. Zapytaj nas o inne produkty z oferty Gaposa.
-        </p>
+                <div class="tab-panel" id="p1-spec">
+                  <div class="spec-grid">
+                    <div class="spec-item"><span class="spec-label">Siła</span><span class="spec-value">100 Nm</span></div>
+                    <div class="spec-item"><span class="spec-label">Zasilanie</span><span class="spec-value">3~ 400V AC</span></div>
+                    <div class="spec-item"><span class="spec-label">Max. waga bramy</span><span class="spec-value">400 kg</span></div>
+                    <div class="spec-item"><span class="spec-label">Prędkość</span><span class="spec-value">21 obr/min</span></div>
+                    <div class="spec-item"><span class="spec-label">Moc silnika</span><span class="spec-value">0,3 kW</span></div>
+                    <div class="spec-item"><span class="spec-label">Klasa ochrony</span><span class="spec-value">IP54</span></div>
+                    <div class="spec-item"><span class="spec-label">Średnica wału</span><span class="spec-value">25,4 mm</span></div>
+                    <div class="spec-item"><span class="spec-label">Cykle / godz.</span><span class="spec-value">20</span></div>
+                  </div>
+                </div>
+
+                <div class="tab-panel" id="p1-zastosowania">
+                  <ul class="usage-list">
+                    <li class="usage-item"><span class="usage-dot"></span>Bramy segmentowe przemysłowe</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Bramy garażowe rezydencjalne</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Systemy wałowe</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Modernizacja istniejących bram</li>
+                  </ul>
+                </div>
+
+                <div class="product-actions">
+                  <a href="#kontakt" class="btn btn-primary" id="product-1-cta">Zapytaj o cenę</a>
+                  <a href="#" class="btn btn-outline" id="product-1-datasheet">Karta produktu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 2: QC40F — Centrala segmentowa -->
+            <article class="product-slide" id="slide-centrala" data-index="1">
+              <div class="product-image-col">
+                <div class="product-image-frame">
+                  <img src="assets/img/Centrala.png" alt="Centrala sterowania Gaposa QC40F" class="product-img" />
+                  <div class="product-image-badge">Centrala</div>
+                </div>
+              </div>
+              <div class="product-info-col">
+                <span class="product-series segmental">Bramy segmentowe</span>
+                <span class="product-category label-tag">Centrala sterująca</span>
+                <h3 class="product-name">QC40F</h3>
+
+                <div class="product-tabs" role="tablist" aria-label="Informacje o produkcie">
+                  <button class="tab-btn active" data-tab="p2-opis" role="tab" aria-selected="true">Opis</button>
+                  <button class="tab-btn" data-tab="p2-spec" role="tab" aria-selected="false">Specyfikacja</button>
+                  <button class="tab-btn" data-tab="p2-zastosowania" role="tab" aria-selected="false">Zastosowania</button>
+                </div>
+
+                <div class="tab-panel active" id="p2-opis">
+                  <p class="product-desc">
+                    Dedykowana centrala sterująca Gaposa zapewniająca precyzyjną kontrolę nad pracą siłownika.
+                    Oferuje zaawansowane funkcje bezpieczeństwa, łatwą konfigurację i szerokie możliwości integracji.
+                  </p>
+                </div>
+
+                <div class="tab-panel" id="p2-spec">
+                  <div class="spec-grid">
+                    <div class="spec-item"><span class="spec-label">Zasilanie</span><span class="spec-value">3~ 400V / 50Hz</span></div>
+                    <div class="spec-item"><span class="spec-label">Klasa ochrony</span><span class="spec-value">IP54</span></div>
+                    <div class="spec-item"><span class="spec-label">Moc siłownika</span><span class="spec-value">max 1,0 kW</span></div>
+                    <div class="spec-item"><span class="spec-label">Temp. pracy</span><span class="spec-value">-10 / +50°C</span></div>
+                    <div class="spec-item"><span class="spec-label">Akcesoria</span><span class="spec-value">24V / 140mA</span></div>
+                    <div class="spec-item"><span class="spec-label">Wymiary</span><span class="spec-value">305×210×120 mm</span></div>
+                  </div>
+                </div>
+
+                <div class="tab-panel" id="p2-zastosowania">
+                  <ul class="usage-list">
+                    <li class="usage-item"><span class="usage-dot"></span>Sterowanie bramami przemysłowymi</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Zarządzanie dostępem</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Integracja z systemami bezpieczeństwa</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Sterowanie pilotem i przyciskiem</li>
+                  </ul>
+                </div>
+
+                <div class="product-actions">
+                  <a href="#kontakt" class="btn btn-primary" id="product-2-cta">Zapytaj o cenę</a>
+                  <a href="#" class="btn btn-outline" id="product-2-datasheet">Karta produktu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 3: BBS 60130RM — Napęd szybkobieżny -->
+            <article class="product-slide" id="slide-rapido" data-index="2">
+              <div class="product-image-col">
+                <div class="product-image-frame">
+                  <img src="assets/img/BBS_60130RME.png" alt="Napęd Gaposa BBS 60130RM" class="product-img" />
+                  <div class="product-image-badge">Napęd</div>
+                </div>
+              </div>
+              <div class="product-info-col">
+                <span class="product-series rapid">Bramy szybkobieżne</span>
+                <span class="product-category label-tag">Siłownik do bram</span>
+                <h3 class="product-name">BBS 60130RM</h3>
+
+                <div class="product-tabs" role="tablist" aria-label="Informacje o produkcie">
+                  <button class="tab-btn active" data-tab="p3-opis" role="tab" aria-selected="true">Opis</button>
+                  <button class="tab-btn" data-tab="p3-spec" role="tab" aria-selected="false">Specyfikacja</button>
+                  <button class="tab-btn" data-tab="p3-zastosowania" role="tab" aria-selected="false">Zastosowania</button>
+                </div>
+
+                <div class="tab-panel active" id="p3-opis">
+                  <p class="product-desc">
+                    Rurowy napęd Gaposa BBS 60130RM zaprojektowany specjalnie do bram szybkobieżnych.
+                    Wysoka prędkość obrotowa 130 rpm i intensywność pracy do 45 cykli/h czynią go idealnym rozwiązaniem
+                    do wymagających zastosowań przemysłowych. Zalecana centrala sterująca: QC600.
+                  </p>
+                </div>
+
+                <div class="tab-panel" id="p3-spec">
+                  <div class="spec-grid">
+                    <div class="spec-item"><span class="spec-label">Moment obrotowy</span><span class="spec-value">60 Nm</span></div>
+                    <div class="spec-item"><span class="spec-label">Prędkość</span><span class="spec-value">130 obr/min</span></div>
+                    <div class="spec-item"><span class="spec-label">Moc</span><span class="spec-value">1,0 kW</span></div>
+                    <div class="spec-item"><span class="spec-label">Zasilanie</span><span class="spec-value">3~ 400V / 230V</span></div>
+                    <div class="spec-item"><span class="spec-label">Cykle / godz.</span><span class="spec-value">45</span></div>
+                    <div class="spec-item"><span class="spec-label">Klasa ochrony</span><span class="spec-value">IP54</span></div>
+                    <div class="spec-item"><span class="spec-label">Temp. pracy</span><span class="spec-value">-20 / +60°C</span></div>
+                    <div class="spec-item"><span class="spec-label">Krańcówki</span><span class="spec-value">maks. 18 obr.</span></div>
+                  </div>
+                </div>
+
+                <div class="tab-panel" id="p3-zastosowania">
+                  <ul class="usage-list">
+                    <li class="usage-item"><span class="usage-dot"></span>Bramy szybkobieżne przemysłowe</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Bramy rolowane wysokiej intensywności</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Magazyny, hale produkcyjne, chłodnie</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Systemy z automatycznym zamknięciem</li>
+                  </ul>
+                </div>
+
+                <div class="product-actions">
+                  <a href="#kontakt" class="btn btn-primary" id="product-3-cta">Zapytaj o cenę</a>
+                  <a href="#" class="btn btn-outline" id="product-3-datasheet">Karta produktu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 4: QC600S — Centrala szybkobieżna -->
+            <article class="product-slide" id="slide-qc600" data-index="3">
+              <div class="product-image-col">
+                <div class="product-image-frame">
+                  <img src="assets/img/QC600S.png" alt="Centrala sterowania Gaposa QC600S" class="product-img" />
+                  <div class="product-image-badge">Centrala</div>
+                </div>
+              </div>
+              <div class="product-info-col">
+                <span class="product-series rapid">Bramy szybkobieżne</span>
+                <span class="product-category label-tag">Centrala sterująca</span>
+                <h3 class="product-name">QC600S</h3>
+
+                <div class="product-tabs" role="tablist" aria-label="Informacje o produkcie">
+                  <button class="tab-btn active" data-tab="p4-opis" role="tab" aria-selected="true">Opis</button>
+                  <button class="tab-btn" data-tab="p4-spec" role="tab" aria-selected="false">Specyfikacja</button>
+                  <button class="tab-btn" data-tab="p4-zastosowania" role="tab" aria-selected="false">Zastosowania</button>
+                </div>
+
+                <div class="tab-panel active" id="p4-opis">
+                  <p class="product-desc">
+                    Zaawansowana centrala sterująca Gaposa QC600S z wbudowanym falownikiem częstotliwości.
+                    Zapewnia płynną regulację prędkości, hamowanie DC oraz obsługę fotobarier i listew bezpieczeństwa.
+                    Klasa szczelności IP66 do pracy w trudnych warunkach przemysłowych.
+                  </p>
+                </div>
+
+                <div class="tab-panel" id="p4-spec">
+                  <div class="spec-grid">
+                    <div class="spec-item"><span class="spec-label">Zasilanie</span><span class="spec-value">1~ 230V AC</span></div>
+                    <div class="spec-item"><span class="spec-label">Wyjście na silnik</span><span class="spec-value">3~ 230V / 0–650 Hz</span></div>
+                    <div class="spec-item"><span class="spec-label">Moc silnika</span><span class="spec-value">max 2,2 kW</span></div>
+                    <div class="spec-item"><span class="spec-label">Prąd wyjściowy</span><span class="spec-value">max 10 A</span></div>
+                    <div class="spec-item"><span class="spec-label">Klasa ochrony</span><span class="spec-value">IP66 / NEMA 4</span></div>
+                    <div class="spec-item"><span class="spec-label">Temp. pracy</span><span class="spec-value">-10 / +50°C</span></div>
+                    <div class="spec-item"><span class="spec-label">Zasilanie 24V</span><span class="spec-value">250 mA</span></div>
+                    <div class="spec-item"><span class="spec-label">Wymiary</span><span class="spec-value">445×215×150 mm</span></div>
+                  </div>
+                </div>
+
+                <div class="tab-panel" id="p4-zastosowania">
+                  <ul class="usage-list">
+                    <li class="usage-item"><span class="usage-dot"></span>Napędy bram szybkobieżnych serii BBS/BRD</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Systemy z enkoderem i krańcówkami elektronicznymi</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Integracja z fotobariery i listwami bezpieczeństwa</li>
+                    <li class="usage-item"><span class="usage-dot"></span>Sieci RS485 — sterowanie wieloma napędami</li>
+                  </ul>
+                </div>
+
+                <div class="product-actions">
+                  <a href="#kontakt" class="btn btn-primary" id="product-4-cta">Zapytaj o cenę</a>
+                  <a href="#" class="btn btn-outline" id="product-4-datasheet">Karta produktu</a>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /product-slides -->
+
+          <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button class="slider-btn slider-prev" id="slider-prev" aria-label="Poprzedni produkt" disabled>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Nawigacja slidera">
+              <button class="dot active" data-index="0" role="tab" aria-selected="true" aria-label="BBS 100TKF — napęd segmentowy"></button>
+              <button class="dot" data-index="1" role="tab" aria-selected="false" aria-label="QC40F — centrala segmentowa"></button>
+              <button class="dot" data-index="2" role="tab" aria-selected="false" aria-label="BBS 60130RM — napęd szybkobieżny"></button>
+              <button class="dot" data-index="3" role="tab" aria-selected="false" aria-label="QC600S — centrala szybkobieżna"></button>
+            </div>
+            <button class="slider-btn slider-next" id="slider-next" aria-label="Następny produkt">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Slide counter -->
+          <div class="slider-counter" aria-live="polite">
+            <span id="slide-current">01</span>
+            <span class="counter-sep">/</span>
+            <span id="slide-total">02</span>
+          </div>
+        </div><!-- /product-slider -->
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         DLACZEGO MY
-    ═══════════════════════════════════════════════ -->
-    <section class="why section-pad" id="dlaczego-my" aria-label="Dlaczego warto wybrać Gaposa Polska">
+    <!-- ════════════ KONFIGURATOR ═══
+    <section class="configurator-section section-pad" id="konfigurator">
       <div class="container">
-        <div class="why__grid">
-          <!-- Left col: title -->
-          <div class="reveal">
-            <span class="label-tag label-tag--white">Nasze atuty</span>
-            <h2 class="section-title section-title--white">Dlaczego<br>warto wybrać<br>Gaposa?</h2>
-            <p class="section-subtitle section-subtitle--white" style="margin-top:1.5rem;">
-              Łączymy włoską jakość z lokalnym wsparciem — dostarczamy nie tylko produkt,
-              ale kompletne rozwiązanie dla Twojej firmy.
+        <div class="configurator-inner">
+          <div class="config-text reveal">
+            <span class="label-tag">Dobierz produkt</span>
+            <h2 class="config-title">Konfigurator<br />zestawu</h2>
+            <p class="config-lead">Wybierz typ swojej bramy i jej przeznaczenie — pomożemy dobrać odpowiedni zestaw.</p>
+
+            <span class="config-step-label">Krok 1 — Rodzaj bramy</span>
+            <div class="config-options" id="config-type">
+              <button class="config-option" data-type="garażowa">Brama garażowa</button>
+              <button class="config-option" data-type="przemysłowa">Brama szybkobieżna</button>
+              <button class="config-option" data-type="automatyka">Tylko sterowanie</button>
+            </div>
+
+            <span class="config-step-label" id="config-step2-label" style="opacity:.3">Krok 2 — Wielkość obiektu</span>
+            <div class="config-options" id="config-size" style="opacity:.3;pointer-events:none">
+              <button class="config-option" data-size="maly">Mieszkanie / dom</button>
+              <button class="config-option" data-size="sredni">Magazyn / hala</button>
+              <button class="config-option" data-size="duzy">Obiekt komercyjny</button>
+            </div>
+          </div>
+
+          <div class="config-result" id="config-result">
+            <div class="config-result-empty" id="config-empty">
+              <div class="config-result-empty-icon">⚙</div>
+              <p>Wybierz opcje po lewej,<br />aby zobaczyć rekomendację.</p>
+            </div>
+            <div id="config-output" style="display:none">
+              <div class="config-result-label">Rekomendowany produkt</div>
+              <div class="config-result-name" id="cr-name"></div>
+              <div class="config-result-desc" id="cr-desc"></div>
+              <div class="config-match-bar">
+                <div class="config-match-fill" id="cr-match" style="width:0%"></div>
+              </div>
+              <div class="config-result-specs" id="cr-chips"></div>
+              <a href="#kontakt" class="btn btn-primary" id="cr-cta">Zapytaj o ten produkt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     -->
+
+
+    <!-- ════════════════════════════════ DISTRIBUTOR ═══ -->
+    <section class="distributor-section section-pad" id="dystrybutor">
+      <div class="container">
+        <div class="distributor-grid">
+          <div class="distributor-text reveal">
+            <span class="label-tag">Autoryzowany dystrybutor</span>
+            <h2 class="section-title">Cezab Distribution</h2>
+            <p class="about-body">
+              Jesteśmy wyłącznym autoryzowanym dystrybutorem Gaposa v Polsce.
+              Zapewniamy pełne wsparcie techniczne, szkolenia dla instalatorów
+              oraz szybką realizację zamówień.
             </p>
-            <a href="#kontakt" class="btn btn--primary" style="margin-top:2rem;" id="why-cta-btn">
-              Porozmawiajmy
-            </a>
+            <div class="why-grid">
+              <div class="why-card">
+                <span class="why-num">01</span>
+                <strong>Wsparcie techniczne</strong>
+                <p>Doradztwo doboru produktów i pomoc po-sprzedażna</p>
+              </div>
+              <div class="why-card">
+                <span class="why-num">02</span>
+                <strong>Szkolenia dla instalatorów</strong>
+                <p>Bezpłatne szkolenia produktowe i techniczne</p>
+              </div>
+              <div class="why-card">
+                <span class="why-num">03</span>
+                <strong>Dostępność produktów</strong>
+                <p>Magazyn krajowy, szybka realizacja zamówień</p>
+              </div>
+              <div class="why-card">
+                <span class="why-num">04</span>
+                <strong>Gwarancja producenta</strong>
+                <p>Pełna gwarancja i obsługa reklamacji</p>
+              </div>
+            </div>
           </div>
-
-          <!-- Right col: cards -->
-          <div class="why__cards">
-            <div class="why-card reveal reveal-delay-1">
-              <div class="why-card__icon" aria-hidden="true">🏆</div>
-              <div class="why-card__title">Autoryzacja producenta</div>
-              <div class="why-card__text">Działamy z oficjalną autoryzacją Gaposa S.r.l. — gwarantujemy oryginalne produkty i pełną gwarancję producenta.</div>
+          <div class="distributor-img-col reveal reveal-delay-1">
+            <div class="hq-image-frame">
+              <img src="assets/img/cezab-distribtuion-base.jpg"
+                alt="Siedziba Cezab Distribution — autoryzowany dystrybutor Gaposa w Polsce" class="hq-img" />
+              <div class="hq-badge">nasze biuro</div>
             </div>
-            <div class="why-card reveal reveal-delay-2">
-              <div class="why-card__icon" aria-hidden="true">🚚</div>
-              <div class="why-card__title">Ekspresowa dostawa</div>
-              <div class="why-card__text">Magazyn w Polsce. Standardowe modele dostępne z wysyłką nawet w 24h od złożenia zamówienia.</div>
-            </div>
-            <div class="why-card reveal reveal-delay-3">
-              <div class="why-card__icon" aria-hidden="true">🔧</div>
-              <div class="why-card__title">Wsparcie instalatora</div>
-              <div class="why-card__text">Szkolenia techniczne, dokumentacja w języku polskim i dedykowany doradca dla firm instalacyjnych.</div>
-            </div>
-            <div class="why-card reveal reveal-delay-4">
-              <div class="why-card__icon" aria-hidden="true">💼</div>
-              <div class="why-card__title">Warunki B2B</div>
-              <div class="why-card__text">Atrakcyjne rabaty dla instalatorów i firm budowlanych. Indywidualne warunki dla stałych klientów.</div>
+            <div class="hq-caption">
+              <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa by D" class="hq-caption-logo" />
+              <span>Autoryzowany dystrybutor w Polsce</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════
-         CTA BANNER
-    ═══════════════════════════════════════════════ -->
-    <section class="cta-section section-pad" aria-label="Wezwanie do działania">
+    <!-- ════════════════════════════════════ CONTACT ═══ -->
+    <section class="contact-section section-pad section-alt" id="kontakt">
       <div class="container">
-        <div class="cta-section__inner">
-          <div>
-            <h2 class="cta-section__title">Gotowy na kolejny projekt?<br>Zadzwoń lub napisz.</h2>
-            <p class="cta-section__sub">Bezpłatna wycena i dobór produktu do Twojej aplikacji.</p>
-          </div>
-          <div class="cta-section__actions">
-            <a href="tel:+48627205430" class="btn btn--outline" id="cta-phone-btn">
-              📞 &nbsp;+48 62 720 54 30
-            </a>
-            <a href="#kontakt" class="btn" style="background:var(--color-white);color:var(--color-primary);font-weight:700;" id="cta-form-btn">
-              Formularz kontaktowy
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════
-         KONTAKT
-    ═══════════════════════════════════════════════ -->
-    <section class="contact section-pad" id="kontakt" aria-label="Formularz kontaktowy">
-      <div class="container">
-        <div class="contact__grid">
-          <!-- Info -->
-          <div class="reveal">
-            <span class="label-tag label-tag--white">Kontakt</span>
-            <h2 class="section-title section-title--white" style="margin-bottom:2rem;">
-              Skontaktuj<br>się z nami
-            </h2>
-
-            <div class="contact__info-block">
-              <div class="contact__info-item">
-                <div class="contact__info-icon" aria-hidden="true">📍</div>
-                <div>
-                  <div class="contact__info-label">Adres</div>
-                  <div class="contact__info-val">ul. Wrocławska 69, 63-400 Ostrów Wielkopolski</div>
-                </div>
+        <div class="contact-grid">
+          <div class="contact-text reveal">
+            <span class="label-tag">Kontakt</span>
+            <h2 class="section-title">Porozmawiajmy!</h2>
+            <p class="about-body">
+              Skontaktuj się z naszym doradcą. Pomożemy dobrać właściwy produkt do Twoich potrzeb i odpowiemy na
+              wszystkie pytania dotyczące oferty.
+            </p>
+            <div class="contact-details">
+              <div class="contact-row">
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <a href="mailto:biuro@cezab-distribution.pl" class="contact-link"
+                  id="contact-email">biuro@cezab-distribution.pl</a>
               </div>
-              <div class="contact__info-item">
-                <div class="contact__info-icon" aria-hidden="true">📞</div>
-                <div>
-                  <div class="contact__info-label">Telefon</div>
-                  <div class="contact__info-val">
-                    <a href="tel:+48627205430">+48 62 720 54 30</a>
-                  </div>
-                </div>
-              </div>
-              <div class="contact__info-item">
-                <div class="contact__info-icon" aria-hidden="true">✉️</div>
-                <div>
-                  <div class="contact__info-label">E-mail</div>
-                  <div class="contact__info-val">
-                    <a href="mailto:biuro@cezab-distribution.pl">biuro@cezab-distribution.pl</a>
-                  </div>
-                </div>
-              </div>
-              <div class="contact__info-item">
-                <div class="contact__info-icon" aria-hidden="true">🕐</div>
-                <div>
-                  <div class="contact__info-label">Godziny pracy</div>
-                  <div class="contact__info-val">Pn–Pt: 8:00–16:00</div>
-                </div>
+              <div class="contact-row">
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <a href="tel:+48627205430" class="contact-link" id="contact-phone">+48 62 720 54 30</a>
               </div>
             </div>
           </div>
-
-          <!-- Form -->
-          <div class="reveal reveal-delay-1">
-            <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="form-name">Imię i nazwisko *</label>
-                  <input type="text" id="form-name" name="name" placeholder="Jan Kowalski" required />
-                </div>
-                <div class="form-group">
-                  <label for="form-company">Firma</label>
-                  <input type="text" id="form-company" name="company" placeholder="Nazwa firmy" />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="form-email">Adres e-mail *</label>
-                  <input type="email" id="form-email" name="email" placeholder="jan@firma.pl" required />
-                </div>
-                <div class="form-group">
-                  <label for="form-phone">Telefon</label>
-                  <input type="tel" id="form-phone" name="phone" placeholder="+48 62 720 54 30" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="form-product">Interesujący produkt</label>
-                <select id="form-product" name="product">
-                  <option value="">Wybierz produkt…</option>
-                  <option value="bbs70">BBS 70 MKF/F</option>
-                  <option value="bbs100">BBS 100 TKF/F</option>
-                  <option value="other">Inny / Nie wiem</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="form-message">Wiadomość *</label>
-                <textarea id="form-message" name="message" placeholder="Opisz swoje zapotrzebowanie, ilości, zastosowanie…" required></textarea>
-              </div>
-              <button type="submit" class="btn btn--primary" id="contact-submit-btn" style="align-self:flex-start;margin-top:0.5rem;">
-                Wyślij zapytanie <span class="arrow" aria-hidden="true">→</span>
-              </button>
-            </form>
-          </div>
+          <form class="contact-form reveal reveal-delay-1" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="form-name" class="form-label">Imię i nazwisko</label>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="Jan Kowalski" required />
+            </div>
+            <div class="form-group">
+              <label for="form-email" class="form-label">E-mail</label>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="jan@firma.pl" required />
+            </div>
+            <div class="form-group">
+              <label for="form-phone" class="form-label">Telefon <span
+                  class="form-optional">(opcjonalnie)</span></label>
+              <input type="tel" id="form-phone" name="phone" class="form-input" placeholder="+48 62 720 54 30" />
+            </div>
+            <div class="form-group">
+              <label for="form-message" class="form-label">Wiadomość</label>
+              <textarea id="form-message" name="message" class="form-input form-textarea"
+                placeholder="Opisz swoje zapotrzebowanie..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contact-submit">Wyślij zapytanie</button>
+            <p class="form-note">Odpowiadamy w ciągu 24h w dni robocze.</p>
+          </form>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ═══════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <!-- Brand -->
-        <div class="footer__brand">
-          <img src="assets/img/gaposa-logo.svg" alt="Gaposa logo" width="120" height="30" />
-          <div style="margin: 1.5rem 0 1rem;">
-             <img src="assets/img/Cezab Distribution Grey PL bez dop.png" alt="CEZAB Distribution logo" width="160" height="auto" style="opacity: 0.8; filter: brightness(1.2);" />
-          </div>
-          <p>
-            Autoryzowany dystrybutor włoskiej marki Gaposa na terenie Polski:
-            <strong>CEZAB Distribution Sp. z o.o.</strong>
-          </p>
-          <span class="footer__brand-tag">Autoryzowany Dystrybutor · Polska</span>
-        </div>
-
-        <!-- Nawigacja -->
-        <div>
-          <div class="footer__col-title">Strona</div>
-          <ul class="footer__links">
-            <li><a href="#o-nas">O nas</a></li>
-            <li><a href="#produkty">Produkty</a></li>
-            <li><a href="#dlaczego-my">Dlaczego my</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-        </div>
-
-        <!-- Produkty -->
-        <div>
-          <div class="footer__col-title">Produkty</div>
-          <ul class="footer__links">
-            <li><a href="products/bbs-70mkf.html">BBS 70 MKF/F</a></li>
-            <li><a href="products/bbs-100tkf.html">BBS 100 TKF/F</a></li>
-            <li><a href="https://www.gaposa.it/eng" target="_blank" rel="noopener noreferrer">Gaposa.it</a></li>
-          </ul>
-        </div>
+  <!-- ════════════════════════════════════ FOOTER ═══ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa by D" class="footer-logo" />
       </div>
-
-      <div class="footer__bottom">
-        <p>© 2025 Gaposa Polska. Wszelkie prawa zastrzeżone.</p>
-        <div class="footer__gaposa-badge">
-          Dystrybutor marki <span>Gaposa</span> S.r.l. przez <span>CEZAB Distribution</span>
-        </div>
-        <div class="footer__bottom-links">
-          <a href="#">Polityka prywatności</a>
-          <a href="#">Pliki cookies</a>
-        </div>
+      <div class="footer-links">
+        <h4 class="footer-heading">Produkty</h4>
+        <ul>
+          <li><a href="#produkty">Napędy do bram</a></li>
+          <li><a href="#produkty">Centrale sterujące</a></li>
+          <li><a href="#produkty">Akcesoria</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-heading">Firma</h4>
+        <ul>
+          <li><a href="o-marce.html">O marce Gaposa</a></li>
+          <li><a href="#dystrybutor">Cezab Distribution</a></li>
+          <li><a href="#wsparcie">Wsparcie techniczne</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h4 class="footer-heading">Kontakt</h4>
+        <p><a href="mailto:biuro@cezab-distribution.pl">biuro@cezab-distribution.pl</a></p>
+        <p><a href="tel:+48627205430">+48 62 720 54 30</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© 2025 Cezab Distribution sp. z o.o. Autoryzowany dystrybutor Gaposa w Polsce.</span>
+        <span>Wszelkie prawa zastrzeżone.</span>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
