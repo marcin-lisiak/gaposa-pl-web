@@ -287,39 +287,6 @@
     }
 
     /* ── CERT STRIP ──────────────────────────────────────── */
-    .cert-strip {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xl);
-      padding: var(--space-xl) 0;
-      border-top: 1px solid var(--c-rule);
-      margin-top: var(--space-xl);
-      flex-wrap: wrap;
-    }
-
-    .cert-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: .88rem;
-      color: var(--c-ink-mid);
-      font-weight: 500;
-    }
-
-    .cert-icon {
-      width: 36px;
-      height: 36px;
-      border: 2px solid var(--c-accent);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .85rem;
-      font-weight: 900;
-      color: var(--c-accent);
-      flex-shrink: 0;
-    }
-
     /* ── BREADCRUMB ──────────────────────────────────────── */
     .breadcrumb {
       display: flex;
@@ -379,9 +346,9 @@
 
       <nav class="header-nav" aria-label="Nawigacja główna">
         <ul class="nav-list">
-          <li><a href="index.html#produkty" class="nav-link">Produkty</a></li>
+          <li><a href="produkty.html" class="nav-link">Produkty</a></li>
           <li><a href="o-marce.html" class="nav-link nav-link--active">O Marce</a></li>
-          <li><a href="index.html#wsparcie" class="nav-link">Wsparcie techniczne</a></li>
+          <li><a href="index.html#dystrybutor" class="nav-link">Wsparcie techniczne</a></li>
           <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
@@ -407,9 +374,9 @@
     <!-- Mobile drawer -->
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
       <ul class="mobile-nav-list">
-        <li><a href="index.html#produkty" class="mobile-nav-link">Produkty</a></li>
+        <li><a href="produkty.html" class="mobile-nav-link">Produkty</a></li>
         <li><a href="o-marce.html" class="mobile-nav-link">O Marce</a></li>
-        <li><a href="index.html#wsparcie" class="mobile-nav-link">Wsparcie techniczne</a></li>
+        <li><a href="index.html#dystrybutor" class="mobile-nav-link">Wsparcie techniczne</a></li>
         <li><a href="index.html#kontakt" class="mobile-nav-link">Kontakt</a></li>
         <li><a href="index.html#kontakt" class="btn btn-primary" style="display:inline-block;margin-top:1rem;">Zapytaj o
             ofertę</a></li>
@@ -500,20 +467,6 @@
             </div>
           </div>
 
-          <div class="cert-strip">
-            <div class="cert-item">
-              <div class="cert-icon">Q</div>
-              <span>Certyfikat ISO 9001</span>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">EU</div>
-              <span>Zgodność z dyrektywami UE</span>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">🇮🇹</div>
-              <span>Made in Italy</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -640,7 +593,7 @@
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="index.html#kontakt" class="btn btn-primary btn-lg">Zapytaj o ofertę</a>
-          <a href="index.html#produkty" class="btn btn-outline btn-lg">Zobacz produkty</a>
+          <a href="produkty.html" class="btn btn-outline btn-lg">Zobacz produkty</a>
         </div>
       </div>
     </section>
@@ -656,9 +609,9 @@
       <div class="footer-links">
         <h4 class="footer-heading">Produkty</h4>
         <ul>
-          <li><a href="index.html#produkty">Napędy do bram</a></li>
-          <li><a href="index.html#produkty">Centrale sterujące</a></li>
-          <li><a href="index.html#produkty">Akcesoria</a></li>
+          <li><a href="produkty.html#napedy">Napędy do bram</a></li>
+          <li><a href="produkty.html#centrale">Centrale sterujące</a></li>
+          <li><a href="produkty.html#zestawy">Kompletne zestawy</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -666,7 +619,7 @@
         <ul>
           <li><a href="o-marce.html">O marce Gaposa</a></li>
           <li><a href="index.html#dystrybutor">Cezab Distribution</a></li>
-          <li><a href="index.html#wsparcie">Wsparcie techniczne</a></li>
+          <li><a href="index.html#dystrybutor">Wsparcie techniczne</a></li>
         </ul>
       </div>
       <div class="footer-contact-col">

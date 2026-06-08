@@ -980,6 +980,12 @@ h3 {
   gap: 4px
 }
 
+.products-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
 .counter-sep {
   color: var(--c-rule)
 }
