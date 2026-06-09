@@ -95,47 +95,134 @@ mobileNav.querySelectorAll('a, .btn').forEach(link => {
   });
 });
 
-// ═══ PRODUCT SLIDER ═══
-const slides = document.querySelectorAll('.product-slide');
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.getElementById('slider-prev');
-const nextBtn = document.getElementById('slider-next');
-const currentLabel = document.getElementById('slide-current');
-const totalLabel = document.getElementById('slide-total');
-let currentIndex = 0;
-const total = slides.length;
-if (totalLabel) totalLabel.textContent = String(total).padStart(2, '0');
-
-function goToSlide(index) {
-  const prev = currentIndex;
-  slides[prev].classList.add('exit-left');
-  slides[prev].classList.remove('active');
-  currentIndex = index;
-  slides[currentIndex].classList.remove('exit-left');
-  slides[currentIndex].classList.add('active');
-  dots.forEach((d, i) => {
-    d.classList.toggle('active', i === currentIndex);
-    d.setAttribute('aria-selected', String(i === currentIndex));
+// ═══ OFFER CAROUSELS ═══
+document.querySelectorAll('[data-offer-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('.offer-carousel-track');
+  const cards = Array.from(carousel.querySelectorAll('.offer-card'));
+  const prev = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  const current = carousel.querySelector('[data-carousel-current]');
+  const total = carousel.querySelector('[data-carousel-total]');
+  const dots = document.createElement('div');
+  dots.className = 'slider-dots offer-slider-dots';
+  cards.forEach((card, cardIndex) => {
+    const dot = document.createElement('button');
+    dot.className = `dot${cardIndex === 0 ? ' active' : ''}`;
+    dot.setAttribute('aria-label', `Pokaż produkt ${cardIndex + 1}`);
+    dot.addEventListener('click', () => { index = cardIndex; updateCarousel(); });
+    dots.appendChild(dot);
   });
-  if (prevBtn) prevBtn.disabled = currentIndex === 0;
-  if (nextBtn) nextBtn.disabled = currentIndex === total - 1;
-  if (currentLabel) currentLabel.textContent = String(currentIndex + 1).padStart(2, '0');
-  setTimeout(() => slides[prev].classList.remove('exit-left'), 500);
-}
-if (slides[0]) slides[0].classList.add('active');
-if (prevBtn) prevBtn.disabled = true;
-if (nextBtn && total <= 1) nextBtn.disabled = true;
-if (prevBtn) prevBtn.addEventListener('click', () => { if (currentIndex > 0) goToSlide(currentIndex - 1); });
-if (nextBtn) nextBtn.addEventListener('click', () => { if (currentIndex < total - 1) goToSlide(currentIndex + 1); });
-dots.forEach(dot => dot.addEventListener('click', () => goToSlide(Number(dot.dataset.index))));
+  if (next) next.before(dots);
+  let index = 0;
 
-const sliderEl = document.getElementById('product-slider');
-if (sliderEl) {
-  sliderEl.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft' && currentIndex > 0) goToSlide(currentIndex - 1);
-    if (e.key === 'ArrowRight' && currentIndex < total - 1) goToSlide(currentIndex + 1);
+  function visibleCards() {
+    return 1;
+  }
+
+  function updateCarousel() {
+    const visible = visibleCards();
+    const maxIndex = Math.max(0, cards.length - visible);
+    index = Math.min(index, maxIndex);
+    const cardWidth = cards[0]?.getBoundingClientRect().width || 0;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+    if (prev) prev.disabled = index === 0;
+    if (next) next.disabled = index === maxIndex;
+    if (current) current.textContent = String(index + 1).padStart(2, '0');
+    if (total) total.textContent = String(cards.length).padStart(2, '0');
+    dots.querySelectorAll('.dot').forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
+  }
+
+  if (prev) prev.addEventListener('click', () => { index -= 1; updateCarousel(); });
+  if (next) next.addEventListener('click', () => { index += 1; updateCarousel(); });
+  carousel.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' && index > 0) { index -= 1; updateCarousel(); }
+    if (event.key === 'ArrowRight' && index < cards.length - visibleCards()) { index += 1; updateCarousel(); }
   });
-}
+  carousel.setAttribute('tabindex', '0');
+  window.addEventListener('resize', updateCarousel, { passive: true });
+  updateCarousel();
+});
+
+// Build consistent description/specification tabs for every offer card.
+document.querySelectorAll('.offer-card').forEach((card, index) => {
+  const copy = card.querySelector('.offer-card-copy');
+  const description = copy?.querySelector(':scope > p');
+  const specs = copy?.querySelector(':scope > .offer-specs');
+  const actions = copy?.querySelector(':scope > .offer-card-actions');
+  if (!copy || !description || !specs || !actions) return;
+
+  if (card.classList.contains('offer-card-set')) {
+    specs.remove();
+    description.classList.add('product-desc');
+    return;
+  }
+
+  const descriptionId = `offer-description-${index + 1}`;
+  const specsId = `offer-specs-${index + 1}`;
+  const tabs = document.createElement('div');
+  tabs.className = 'product-tabs offer-product-tabs';
+  tabs.setAttribute('role', 'tablist');
+  tabs.setAttribute('aria-label', 'Informacje o produkcie');
+  tabs.innerHTML = `
+    <button class="tab-btn active" data-tab="${descriptionId}" role="tab" aria-selected="true">Opis</button>
+    <button class="tab-btn" data-tab="${specsId}" role="tab" aria-selected="false">Specyfikacja</button>
+  `;
+
+  const descriptionPanel = document.createElement('div');
+  descriptionPanel.className = 'tab-panel active offer-tab-panel';
+  descriptionPanel.id = descriptionId;
+  description.classList.add('product-desc');
+  descriptionPanel.appendChild(description);
+
+  const specsPanel = document.createElement('div');
+  specsPanel.className = 'tab-panel offer-tab-panel';
+  specsPanel.id = specsId;
+  specs.classList.add('offer-spec-grid');
+  specsPanel.appendChild(specs);
+
+  const compatibleControllers = card.dataset.compatibleControllers;
+  let compatiblePanel = null;
+  if (compatibleControllers) {
+    const compatibleId = `offer-compatible-${index + 1}`;
+    const compatibleButton = document.createElement('button');
+    compatibleButton.className = 'tab-btn';
+    compatibleButton.dataset.tab = compatibleId;
+    compatibleButton.setAttribute('role', 'tab');
+    compatibleButton.setAttribute('aria-selected', 'false');
+    compatibleButton.textContent = 'Dopasowane centrale';
+    tabs.appendChild(compatibleButton);
+
+    compatiblePanel = document.createElement('div');
+    compatiblePanel.className = 'tab-panel offer-tab-panel';
+    compatiblePanel.id = compatibleId;
+    const compatibleGrid = document.createElement('div');
+    compatibleGrid.className = 'compatible-controllers';
+    const controllerLinks = {
+      QC40F: 'products/qc40f.html',
+      QC600S: 'products/qc600s.html'
+    };
+    compatibleControllers.split(';').forEach(controller => {
+      const [name, image] = controller.split(',');
+      const item = document.createElement('a');
+      item.className = 'compatible-controller';
+      item.href = controllerLinks[name] || 'produkty.html#centrale';
+      item.setAttribute('aria-label', `Zobacz centralę sterującą ${name}`);
+      item.innerHTML = `
+        <span class="compatible-controller-image"><img src="${image}" alt="" /></span>
+        <strong>${name}</strong>
+        <span class="compatible-controller-link">Zobacz</span>
+      `;
+      compatibleGrid.appendChild(item);
+    });
+    compatiblePanel.appendChild(compatibleGrid);
+  }
+
+  copy.insertBefore(tabs, actions);
+  copy.insertBefore(descriptionPanel, actions);
+  copy.insertBefore(specsPanel, actions);
+  if (compatiblePanel) copy.insertBefore(compatiblePanel, actions);
+});
 
 // ═══ PRODUCT TABS ═══
 document.querySelectorAll('.product-tabs').forEach(tabGroup => {
@@ -143,7 +230,7 @@ document.querySelectorAll('.product-tabs').forEach(tabGroup => {
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.dataset.tab;
-      const slide = btn.closest('.product-slide') || btn.closest('.product-info-col');
+      const slide = btn.closest('.offer-card') || btn.closest('.product-slide') || btn.closest('.product-info-col');
       const allPanels = (slide || document).querySelectorAll('.tab-panel');
       const allBtns = tabGroup.querySelectorAll('.tab-btn');
       allBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });

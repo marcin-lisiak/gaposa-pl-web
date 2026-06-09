@@ -35,20 +35,20 @@ ul {
 }
 
 :root {
-  --c-bg: #F5F3F0;
-  --c-surface: #FDFCFB;
-  --c-surface-alt: #EDE9E3;
-  --c-ink: #1E1A17;
-  --c-ink-mid: #4A4340;
-  --c-ink-faint: #8A8178;
-  --c-rule: #D8D2CA;
-  --c-dark: #141210;
-  --c-dark-surface: #1E1A17;
+  --c-bg: #F7F9FA;
+  --c-surface: #FFFFFF;
+  --c-surface-alt: #EAF1F5;
+  --c-ink: #101820;
+  --c-ink-mid: #465663;
+  --c-ink-faint: #788A97;
+  --c-rule: #D5E0E6;
+  --c-dark: #0B1822;
+  --c-dark-surface: #132634;
   --c-accent: #014f7d;
   --c-accent-hover: #02639d;
   --c-accent-pale: #f0f7fb;
-  --c-on-dark: #E2DDD7;
-  --c-on-dark-faint: #8A8178;
+  --c-on-dark: #E7EEF2;
+  --c-on-dark-faint: #8EA1AE;
   --space-xs: .5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -58,7 +58,7 @@ ul {
   --t-fast: 140ms ease;
   --t-normal: 280ms ease;
   --t-slow: 480ms cubic-bezier(.16, 1, .3, 1);
-  --shadow-card: 0 8px 40px rgba(20, 18, 16, .1);
+  --shadow-card: 0 8px 40px rgba(15, 29, 39, .1);
 }
 
 .container {

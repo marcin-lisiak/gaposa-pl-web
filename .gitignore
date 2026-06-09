@@ -4,6 +4,9 @@ Materiały/
 # System / IDE
 .gemini/
 .vscode/
+.chrome-review/
+.codex-git/
+_local-backups/
 Thumbs.db
 .DS_Store
 
