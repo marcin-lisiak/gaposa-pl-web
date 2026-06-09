@@ -138,43 +138,162 @@
       align-items: center;
     }
 
-    .story-highlight {
-      border: 1px solid var(--c-rule);
-      background: var(--c-surface);
-      padding: var(--space-md);
-      margin-top: var(--space-md);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
+    .mission-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--c-dark);
+      color: #fff;
     }
 
-    .story-proof {
-      border-left: 1px solid var(--c-rule);
-      padding-left: var(--space-sm);
-    }
-
-    .story-proof:first-child {
-      border-left: 0;
-      padding-left: 0;
-    }
-
-    .story-proof strong {
-      display: block;
+    .mission-section::after {
+      content: 'GAPOSA';
+      position: absolute;
+      right: -1rem;
+      bottom: -3.5rem;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.7rem;
+      font-size: clamp(8rem, 22vw, 19rem);
+      font-weight: 900;
       line-height: 1;
-      color: var(--c-accent);
-      margin-bottom: .35rem;
+      color: rgba(255, 255, 255, .025);
+      pointer-events: none;
     }
 
-    .story-proof span {
-      display: block;
-      font-size: .72rem;
+    .mission-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(300px, .95fr) 1.25fr;
+      gap: var(--space-2xl);
+      align-items: start;
+    }
+
+    .mission-title {
+      max-width: 13ch;
+      text-wrap: balance;
+      color: #fff;
+    }
+
+    .mission-copy {
+      max-width: 65ch;
+      padding-left: var(--space-lg);
+      border-left: 3px solid var(--c-accent);
+    }
+
+    .mission-copy p {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.75;
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .mission-path {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: var(--space-lg);
+    }
+
+    .mission-path span {
+      padding: .5rem .8rem;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 999px;
+      font-size: .68rem;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--c-ink-faint);
-      line-height: 1.35;
+      color: rgba(255, 255, 255, .68);
+    }
+
+    .quality-section {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule);
+    }
+
+    .quality-intro {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: var(--space-xl);
+      align-items: end;
+      margin-bottom: var(--space-xl);
+    }
+
+    .quality-lead {
+      max-width: 62ch;
+      margin-left: auto;
+      color: var(--c-ink-mid);
+      line-height: 1.75;
+    }
+
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .quality-card {
+      position: relative;
+      min-height: 250px;
+      padding: var(--space-lg) var(--space-md) var(--space-md);
+      border: 1px solid var(--c-rule);
+      border-radius: var(--radius-sm);
+      background: var(--c-bg);
+      overflow: hidden;
+      transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
+    }
+
+    .quality-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(1, 79, 125, .3);
+      box-shadow: 0 16px 32px rgba(15, 29, 39, .08);
+    }
+
+    .quality-num {
+      position: absolute;
+      top: .65rem;
+      right: .85rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(1, 79, 125, .09);
+    }
+
+    .quality-card h3 {
+      max-width: 15ch;
+      margin-bottom: var(--space-sm);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      color: var(--c-ink);
+    }
+
+    .quality-card p {
+      color: var(--c-ink-mid);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .quality-commitment {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: var(--space-md);
+      align-items: center;
+      margin-top: var(--space-xl);
+      padding: var(--space-md);
+      border: 1px solid rgba(1, 79, 125, .18);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, .7);
+    }
+
+    .quality-commitment strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      color: var(--c-accent);
+    }
+
+    .quality-commitment p {
+      color: var(--c-ink-mid);
+      line-height: 1.7;
     }
 
     .history-section {
@@ -313,24 +432,22 @@
       .history-timeline { grid-template-columns: repeat(2, 1fr); }
       .values-grid { grid-template-columns: repeat(2, 1fr); }
       .page-hero-stats { gap: var(--space-lg); }
+      .mission-layout,
+      .quality-intro { grid-template-columns: 1fr; }
+      .quality-lead { margin-left: 0; }
+      .quality-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 640px) {
       .page-hero-stats { flex-direction: column; gap: var(--space-md); }
-      .story-highlight { grid-template-columns: 1fr; }
-      .story-proof,
-      .story-proof:first-child {
-        border-left: 0;
-        border-top: 1px solid var(--c-rule);
-        padding-left: 0;
-        padding-top: var(--space-sm);
-      }
-      .story-proof:first-child {
-        border-top: 0;
-        padding-top: 0;
-      }
       .history-timeline,
       .values-grid { grid-template-columns: 1fr; }
+      .mission-copy {
+        padding-left: var(--space-md);
+      }
+      .quality-grid { grid-template-columns: 1fr; }
+      .quality-card { min-height: auto; }
+      .quality-commitment { grid-template-columns: 1fr; }
     }
   </style>
   <link rel="stylesheet" href="css/visual-refresh.css" />
@@ -399,9 +516,8 @@
         <span class="page-hero-eyebrow">O marce</span>
         <h1 class="page-hero-title">Włoska marka, <em>globalna jakość</em></h1>
         <p class="page-hero-lead">
-          Gaposa to włoski producent specjalizujący się w napędach do bram,
-          osłon przeciwsłonecznych i systemów automatyki. Od 1969 roku rozwija własne
-          rozwiązania, inwestuje w R&D i utrzymuje produkcję w całości we Włoszech.
+          Gaposa to włoski producent systemów automatyki do bram przemysłowych i garażowych,
+          a także rolet i systemów ochrony przeciwsłonecznej.
         </p>
         <div class="page-hero-stats">
           <div class="page-hero-stat">
@@ -438,145 +554,64 @@
         </div>
 
         <div class="about-text-col reveal reveal-delay-1">
-          <span class="label-tag">Nasza historia</span>
-          <h2 class="section-title">Od warsztatu do międzynarodowej automatyki</h2>
+          <span class="label-tag">O firmie</span>
+          <h2 class="section-title">Włoska inżynieria obecna na całym świecie</h2>
           <p class="about-body">
-            Gaposa powstała w 1969 roku z inicjatywy Cesare Gasparriniego i Dantego Postachiniego.
-            Już w pierwszym roku działalności firma wprowadziła pierwsze napędy do rolet i stalowych
-            bram rolowanych. Ten praktyczny początek dobrze tłumaczy charakter marki: mniej obietnic,
-            więcej mechaniki, testów i konsekwentnego rozwoju produktu.
+            Założona w 1969 roku firma Gaposa od pierwszych lat działalności konsekwentnie prowadzi
+            politykę badawczo-rozwojową, aby przewidywać zmiany rynkowe. Dzięki licznym patentom
+            i produkcji prowadzonej w 100% we Włoszech, Gaposa umocniła swoją pozycję jednego
+            z liderów zarówno na rynku przemysłowym, jak i mieszkaniowym.
           </p>
           <p class="about-body" style="margin-top: 1rem;">
-            Kolejne dekady to rozwój napędów bocznych do dużych bram przemysłowych, systemów
-            bezpieczeństwa, elektroniki sterującej i rozwiązań do bram szybkobieżnych. Gaposa
-            rosła razem z rynkiem, ale zachowała istotną przewagę: projektowanie, produkcję,
-            R&D i kontrolę jakości blisko siebie, we włoskim Fermo.
+            Strategia ta pozwoliła firmie znacząco zwiększyć obecność na rynku międzynarodowym.
+            Gaposa otworzyła cztery spółki zależne w Hiszpanii, Francji, USA i Bułgarii,
+            a dziś eksportuje swoje rozwiązania do ponad 30 krajów na wszystkich kontynentach.
           </p>
-
-          <div class="story-highlight">
-            <div class="story-proof">
-              <strong>R&D</strong>
-              <span>Stała polityka rozwoju i patenty</span>
-            </div>
-            <div class="story-proof">
-              <strong>4</strong>
-              <span>Spółki zagraniczne Gaposa</span>
-            </div>
-            <div class="story-proof">
-              <strong>6000 m²</strong>
-              <span>Nowa siedziba produkcyjna od 2005</span>
-            </div>
-          </div>
 
         </div>
       </div>
     </section>
 
-    <section class="history-section section-pad">
+    <section class="mission-section section-pad">
       <div class="container">
-        <div class="history-intro">
+        <div class="mission-layout">
           <div>
-            <span class="label-tag">Kamienie milowe</span>
-            <h2 class="section-title">Historia zapisana w produktach</h2>
+            <span class="label-tag" style="color: rgba(255,255,255,.5);">Misja</span>
+            <h2 class="section-title mission-title">Doskonałość od pomysłu po gotowy produkt</h2>
           </div>
-          <p class="history-lead">
-            Najważniejsze momenty Gaposa nie są tylko datami z folderu firmowego. To kolejne
-            generacje rozwiązań dla instalatorów: łatwiejszy montaż, bezpieczniejsza praca bram,
-            własna elektronika i coraz szybsza obsługa klientów na wielu rynkach.
-          </p>
-        </div>
-
-        <div class="history-timeline">
-          <article class="history-item reveal">
-            <div class="history-year">1969</div>
-            <div>
-              <h3>Pierwsze napędy</h3>
-              <p>Start Gaposa srl oraz pierwsze modele napędów do rolet i stalowych bram rolowanych.</p>
+          <div class="mission-copy reveal">
+            <p>Od inżynierii, przez produkcję i planowanie, po kontrolę jakości. Misją Gaposa jest osiągnięcie doskonałości w produktach i usługach. Bezpośrednim rezultatem są innowacyjne patenty oraz niezwykle niezawodne produkty o wysokiej wydajności. Firma jest dumna, że wysiłek całego zespołu przyczynia się nie tylko do sukcesu Gaposa, ale także do jakości rozwiązań stosowanych w przedsiębiorstwach i budynkach prywatnych.</p>
+            <div class="mission-path" aria-label="Obszary realizacji misji">
+              <span>Inżynieria</span>
+              <span>Produkcja</span>
+              <span>Planowanie</span>
+              <span>Kontrola jakości</span>
             </div>
-          </article>
-          <article class="history-item reveal reveal-delay-1">
-            <div class="history-year">1979</div>
-            <div>
-              <h3>Sidemotor</h3>
-              <p>Pierwszy boczny napęd do dużych bram przemysłowych, ceniony za solidność i niezawodność.</p>
-            </div>
-          </article>
-          <article class="history-item reveal reveal-delay-2">
-            <div class="history-year">1980</div>
-            <div>
-              <h3>Split</h3>
-              <p>Centralny napęd o konstrukcji ułatwiającej szybki montaż bez cięcia rury i spawania.</p>
-            </div>
-          </article>
-          <article class="history-item reveal reveal-delay-3">
-            <div class="history-year">1997</div>
-            <div>
-              <h3>Bramy segmentowe</h3>
-              <p>Powstaje gama napędów SCZ do bram segmentowych, ważny krok w stronę rynku przemysłowego.</p>
-            </div>
-          </article>
-          <article class="history-item reveal">
-            <div class="history-year">2005</div>
-            <div>
-              <h3>Nowa siedziba</h3>
-              <p>Produkcja, sprzedaż i R&D trafiają do jednego zakładu, co skraca drogę od pomysłu do produktu.</p>
-            </div>
-          </article>
-          <article class="history-item reveal reveal-delay-1">
-            <div class="history-year">2010</div>
-            <div>
-              <h3>Własna elektronika</h3>
-              <p>Gaposa zaczyna produkować wewnętrznie większość elektroniki: centrale, czujniki i nadajniki.</p>
-            </div>
-          </article>
-          <article class="history-item reveal reveal-delay-2">
-            <div class="history-year">2018</div>
-            <div>
-              <h3>RAPIDO</h3>
-              <p>Linia napędów bocznych do bram szybkobieżnych i składanych poszerza ofertę automatyki przemysłowej.</p>
-            </div>
-          </article>
-          <article class="history-item reveal reveal-delay-3">
-            <div class="history-year">2020</div>
-            <div>
-              <h3>RollApp</h3>
-              <p>Marka wchodzi w rozwiązania smart, oferując własną aplikację do zdalnego sterowania automatyką radiową.</p>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════ VALUES ═══ -->
-    <section class="values-section section-pad">
+    <section class="quality-section section-pad">
       <div class="container">
-        <span class="label-tag" style="color: rgba(255,255,255,.5);">Dlaczego Gaposa</span>
-        <h2 class="section-title" style="color:#fff; margin-top: .5rem;">Wartości, które widać w produkcie</h2>
-        <div class="values-grid">
-          <div class="value-card reveal">
-            <div class="value-card-num">01</div>
-            <h3>Ludzie</h3>
-            <p>Gaposa podkreśla znaczenie zespołu, bezpieczeństwa pracy i kompetencji, które później
-              przekładają się na powtarzalność produkcji.</p>
+        <div class="quality-intro">
+          <div>
+            <span class="label-tag">Polityka jakości</span>
+            <h2 class="section-title">Jakość kontrolowana na każdym etapie</h2>
           </div>
-          <div class="value-card reveal reveal-delay-1">
-            <div class="value-card-num">02</div>
-            <h3>Współpraca</h3>
-            <p>Długie relacje z klientami, dystrybutorami i dostawcami są częścią modelu działania,
-              nie dodatkiem do sprzedaży.</p>
-          </div>
-          <div class="value-card reveal reveal-delay-2">
-            <div class="value-card-num">03</div>
-            <h3>Innowacja</h3>
-            <p>Rozwój obejmuje produkt, produkcję i organizację firmy, dzięki czemu nowe rozwiązania
-              szybciej trafiają do instalatorów.</p>
-          </div>
-          <div class="value-card reveal reveal-delay-3">
-            <div class="value-card-num">04</div>
-            <h3>Zrównoważenie</h3>
-            <p>Firma stawia na systemy pomagające oszczędzać energię oraz ograniczanie odpadów
-              w codziennej produkcji.</p>
-          </div>
+          <p class="quality-lead">Głównym celem firmy Gaposa jest zadowolenie klienta, od instalatora po użytkownika końcowego. Aby go osiągnąć, firma dąży do doskonałości produktów i procesów poprzez zintegrowany system zarządzania jakością.</p>
+        </div>
+        <div class="quality-grid">
+          <article class="quality-card reveal"><span class="quality-num">01</span><h3>Zgodność z przepisami</h3><p>Wszystkie działania i produkty Gaposa są zgodne z europejskimi przepisami dotyczącymi jakości, bezpieczeństwa, ludzi i środowiska.</p></article>
+          <article class="quality-card reveal reveal-delay-1"><span class="quality-num">02</span><h3>Oczekiwania rynku</h3><p>Produkty i usługi muszą odpowiadać oczekiwaniom klientów zarówno w zakresie wydajności, jak i ceny.</p></article>
+          <article class="quality-card reveal reveal-delay-2"><span class="quality-num">03</span><h3>Efektywność</h3><p>Ciągłe doskonalenie procesów pozwala obniżać koszty operacyjne oraz zwiększać inwestycje w innowacyjne technologie i szkolenia.</p></article>
+          <article class="quality-card reveal"><span class="quality-num">04</span><h3>Kontrola łańcucha dostaw</h3><p>Komponenty od zewnętrznych dostawców podlegają kontroli i muszą odpowiadać zamówionym parametrom produktu.</p></article>
+          <article class="quality-card reveal reveal-delay-1"><span class="quality-num">05</span><h3>Wkład i komunikacja</h3><p>Procedury jakości są promowane na wszystkich poziomach firmy oraz w relacjach z dystrybutorami, personelem handlowym i dostawcami.</p></article>
+          <article class="quality-card reveal reveal-delay-2"><span class="quality-num">06</span><h3>Czas reakcji</h3><p>Dobre zarządzanie zapasami skraca czas realizacji zamówień, a reklamacje są rozpatrywane według planu analitycznego i działań korygujących.</p></article>
+        </div>
+        <div class="quality-commitment reveal">
+          <strong>Ciągłe monitorowanie</strong>
+          <p>Zarząd Gaposa zobowiązuje się do stałego monitorowania prawidłowej realizacji polityki kontroli jakości.</p>
         </div>
       </div>
     </section>
