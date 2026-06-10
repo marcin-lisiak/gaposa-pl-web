@@ -190,11 +190,22 @@ h3 {
   z-index: 100;
   background: var(--c-surface);
   border-bottom: 1px solid var(--c-rule);
-  transition: box-shadow var(--t-normal)
+  transform: translateY(0);
+  transition: transform var(--t-normal), box-shadow var(--t-normal)
 }
 
 .site-header.scrolled {
   box-shadow: 0 4px 24px rgba(20, 18, 16, .08)
+}
+
+.site-header.header-hidden {
+  transform: translateY(calc(-100% + 8px));
+}
+
+.site-header.header-hidden:hover,
+.site-header.header-hidden:focus-within,
+.site-header.header-visible {
+  transform: translateY(0);
 }
 
 .header-inner {
