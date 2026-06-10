@@ -794,6 +794,15 @@ body {
   box-shadow: var(--shadow-media);
 }
 
+.contact-form .btn-full,
+.contact-form .btn-full:hover {
+  transform: none;
+}
+
+.contact-form .btn-full:hover {
+  box-shadow: 0 10px 22px rgba(1, 79, 125, .26);
+}
+
 .form-input {
   border: 0;
   border-bottom: 1px solid var(--c-rule);

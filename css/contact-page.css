@@ -1,0 +1,98 @@
+.contact-page-hero {
+  padding: calc(68px + var(--space-xl)) 0 var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(5, 15, 28, .95), rgba(5, 15, 28, .72) 58%, rgba(5, 15, 28, .35)),
+    url('../assets/img/cezab-distribtuion-base.jpg') center / cover;
+  color: #fff;
+}
+
+.contact-page-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: var(--c-accent);
+}
+
+.contact-page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page-title {
+  max-width: 10ch;
+  margin-bottom: var(--space-md);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: .88;
+  color: #fff;
+}
+
+.contact-page-lead {
+  max-width: 58ch;
+  color: rgba(255, 255, 255, .7);
+  font-size: 1.08rem;
+}
+
+.contact-page-quick {
+  border-bottom: 1px solid var(--c-rule);
+  background: var(--c-surface);
+}
+
+.contact-page-quick-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-page-quick-item {
+  min-height: 110px;
+  padding: var(--space-md);
+  border-right: 1px solid var(--c-rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-page-quick-item:last-child {
+  border-right: 0;
+}
+
+.contact-page-quick-item span {
+  margin-bottom: .35rem;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--c-ink-faint);
+}
+
+.contact-page-quick-item a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  transition: color var(--t-fast);
+}
+
+.contact-page-quick-item a:hover {
+  color: var(--c-accent);
+}
+
+.contact-page-form {
+  background: var(--c-surface-alt);
+  border-top: 1px solid var(--c-rule);
+}
+
+@media (max-width: 768px) {
+  .contact-page-quick-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page-quick-item,
+  .contact-page-quick-item:last-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--c-rule);
+  }
+}
