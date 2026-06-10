@@ -24,20 +24,6 @@
       overflow: hidden;
     }
 
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url('assets/img/Szkielet\ napędu.png');
-      background-position: right -80px center;
-      background-repeat: no-repeat;
-      background-size: 40%;
-      opacity: 0.06;
-      pointer-events: none;
-      mask-image: radial-gradient(ellipse 55% 70% at 85% 50%, black 20%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 55% 70% at 85% 50%, black 20%, transparent 100%);
-    }
-
     .page-hero-inner {
       max-width: 1180px;
       margin: 0 auto;
@@ -85,8 +71,12 @@
     .page-hero-lead {
       font-size: 1.1rem;
       color: var(--c-ink-mid);
-      max-width: 52ch;
+      max-width: 68ch;
       line-height: 1.75;
+    }
+
+    .page-hero-lead + .page-hero-lead {
+      margin-top: var(--space-sm);
     }
 
     .page-hero-stats {
@@ -466,7 +456,7 @@
         <ul class="nav-list">
           <li><a href="produkty.html" class="nav-link">Produkty</a></li>
           <li><a href="o-marce.html" class="nav-link nav-link--active">O Marce</a></li>
-          <li><a href="index.html#dystrybutor" class="nav-link">Wsparcie techniczne</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
         </ul>
       </nav>
@@ -494,7 +484,7 @@
       <ul class="mobile-nav-list">
         <li><a href="produkty.html" class="mobile-nav-link">Produkty</a></li>
         <li><a href="o-marce.html" class="mobile-nav-link">O Marce</a></li>
-        <li><a href="index.html#dystrybutor" class="mobile-nav-link">Wsparcie techniczne</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
         <li><a href="index.html#kontakt" class="mobile-nav-link">Kontakt</a></li>
         <li><a href="index.html#kontakt" class="btn btn-primary" style="display:inline-block;margin-top:1rem;">Zapytaj o
             ofertę</a></li>
@@ -514,10 +504,16 @@
           <span>O marce</span>
         </nav>
         <span class="page-hero-eyebrow">O marce</span>
-        <h1 class="page-hero-title">Włoska marka, <em>globalna jakość</em></h1>
+        <h1 class="page-hero-title">Włoska inżynieria, <em>globalna jakość</em></h1>
         <p class="page-hero-lead">
-          Gaposa to włoski producent systemów automatyki do bram przemysłowych i garażowych,
-          a także rolet i systemów ochrony przeciwsłonecznej.
+          Założona w 1969 roku Gaposa jest włoskim producentem systemów automatyki do bram przemysłowych
+          i garażowych, a także rolet i systemów ochrony przeciwsłonecznej. Od początku działalności
+          konsekwentnie rozwija własne rozwiązania, patenty i technologie.
+        </p>
+        <p class="page-hero-lead">
+          Produkcja prowadzona w 100% we Włoszech oraz obecność spółek w Hiszpanii, Francji, USA
+          i Bułgarii pozwoliły marce dotrzeć ze swoimi rozwiązaniami do ponad 30 krajów na wszystkich
+          kontynentach.
         </p>
         <div class="page-hero-stats">
           <div class="page-hero-stat">
@@ -532,42 +528,6 @@
             <span class="page-hero-stat-val">100%</span>
             <span class="page-hero-stat-label">Made in Italy</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════ BRAND SPLIT ═══ -->
-    <section class="section-pad">
-      <div class="container brand-split">
-        <div class="about-image-col reveal">
-          <div class="about-image-frame">
-            <img
-              src="assets/img/Szkielet napędu.png"
-              alt="Budowa napędu Gaposa — precyzja włoskiej inżynierii"
-              class="about-img"
-            />
-          </div>
-          <div class="about-image-caption">
-            <span>Wyprodukowano we Włoszech</span>
-            <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa logo" class="about-badge-logo" />
-          </div>
-        </div>
-
-        <div class="about-text-col reveal reveal-delay-1">
-          <span class="label-tag">O firmie</span>
-          <h2 class="section-title">Włoska inżynieria obecna na całym świecie</h2>
-          <p class="about-body">
-            Założona w 1969 roku firma Gaposa od pierwszych lat działalności konsekwentnie prowadzi
-            politykę badawczo-rozwojową, aby przewidywać zmiany rynkowe. Dzięki licznym patentom
-            i produkcji prowadzonej w 100% we Włoszech, Gaposa umocniła swoją pozycję jednego
-            z liderów zarówno na rynku przemysłowym, jak i mieszkaniowym.
-          </p>
-          <p class="about-body" style="margin-top: 1rem;">
-            Strategia ta pozwoliła firmie znacząco zwiększyć obecność na rynku międzynarodowym.
-            Gaposa otworzyła cztery spółki zależne w Hiszpanii, Francji, USA i Bułgarii,
-            a dziś eksportuje swoje rozwiązania do ponad 30 krajów na wszystkich kontynentach.
-          </p>
-
         </div>
       </div>
     </section>
@@ -647,7 +607,7 @@
         <ul>
           <li><a href="produkty.html#napedy">Napędy do bram</a></li>
           <li><a href="produkty.html#centrale">Centrale sterujące</a></li>
-          <li><a href="produkty.html#zestawy">Kompletne zestawy</a></li>
+          <li><a href="produkty.html#akcesoria">Akcesoria</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -655,7 +615,7 @@
         <ul>
           <li><a href="o-marce.html">O marce Gaposa</a></li>
           <li><a href="index.html#dystrybutor">Cezab Distribution</a></li>
-          <li><a href="index.html#dystrybutor">Wsparcie techniczne</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-contact-col">

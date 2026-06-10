@@ -239,6 +239,11 @@
   object-fit: contain;
 }
 
+.catalog-card-accessory .catalog-card-image {
+  min-height: 250px;
+  background: var(--c-surface);
+}
+
 .catalog-card-copy {
   padding: var(--space-md);
   display: flex;

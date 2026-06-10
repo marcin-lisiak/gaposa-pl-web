@@ -376,16 +376,6 @@ h3 {
   padding-top: 68px
 }
 
-.hero-accent-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--c-accent);
-  z-index: 5
-}
-
 /* Individual slides — stacked, crossfade */
 .hero-slide {
   position: absolute;
@@ -1385,6 +1375,20 @@ h3 {
 
 .contact-link:hover {
   color: var(--c-accent)
+}
+
+.contact-support {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35
+}
+
+.contact-support span {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--c-ink-faint)
 }
 
 .contact-form {

@@ -537,6 +537,13 @@ body {
   color: #fff;
 }
 
+.offer-card-actions a.offer-details-link {
+  order: initial;
+  border-color: var(--c-ink);
+  background: rgba(255, 255, 255, .56);
+  color: var(--c-ink);
+}
+
 .offer-card-set .offer-card-media {
   background: linear-gradient(145deg, #fff, #e8f3f8);
 }
@@ -544,6 +551,22 @@ body {
 .offer-card-set .product-desc {
   min-height: 125px;
   margin: var(--space-sm) 0 var(--space-lg);
+}
+
+.offer-card-set .product-desc a {
+  font-weight: 700;
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+
+.offer-card-set .product-desc a:hover {
+  color: var(--c-accent-hover);
+}
+
+.offer-card-set .offer-card-actions a[href="#kontakt"] {
+  order: initial;
 }
 
 .product-slider {
