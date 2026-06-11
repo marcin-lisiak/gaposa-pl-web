@@ -18,7 +18,8 @@
     .page-hero {
       padding-top: calc(68px + 5rem);
       padding-bottom: 5rem;
-      background: var(--c-bg);
+      background:
+        linear-gradient(90deg, var(--c-bg) 0%, var(--c-bg) 48%, rgba(247, 249, 250, .9) 64%, rgba(247, 249, 250, .68) 100%);
       border-bottom: 1px solid var(--c-rule);
       position: relative;
       overflow: hidden;
@@ -110,14 +111,30 @@
 
     .italian-ribbon {
       position: absolute;
-      top: -10%;
-      right: 12%;
-      bottom: -10%;
-      width: 80px;
-      background: linear-gradient(to bottom, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce2b37 66.6%);
-      box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+      inset: 0 0 0 auto;
+      width: min(58vw, 880px);
+      background:
+        linear-gradient(90deg,
+          #009246 0%,
+          #009246 33.333%,
+          #ffffff 33.333%,
+          #ffffff 66.666%,
+          #ce2b37 66.666%,
+          #ce2b37 100%);
+      box-shadow: -28px 0 55px rgba(15, 29, 39, .08);
       z-index: 0;
-      transform: rotate(15deg);
+      opacity: .34;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .18) 12%, #000 36%, #000 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .18) 12%, #000 36%, #000 100%);
+    }
+
+    .italian-ribbon::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .12), transparent 26%, rgba(15, 29, 39, .05) 100%);
+      pointer-events: none;
     }
 
     /* ── BRAND SPLIT ─────────────────────────────────────── */
@@ -422,6 +439,10 @@
       .history-timeline { grid-template-columns: repeat(2, 1fr); }
       .values-grid { grid-template-columns: repeat(2, 1fr); }
       .page-hero-stats { gap: var(--space-lg); }
+      .italian-ribbon {
+        width: 68vw;
+        opacity: .26;
+      }
       .mission-layout,
       .quality-intro { grid-template-columns: 1fr; }
       .quality-lead { margin-left: 0; }
@@ -429,6 +450,18 @@
     }
 
     @media (max-width: 640px) {
+      .page-hero {
+        background: var(--c-bg);
+      }
+      .italian-ribbon {
+        top: auto;
+        width: 100%;
+        height: 112px;
+        opacity: .52;
+        box-shadow: 0 -12px 28px rgba(15, 29, 39, .08);
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 42%, #000 100%);
+        mask-image: linear-gradient(180deg, transparent 0%, #000 42%, #000 100%);
+      }
       .page-hero-stats { flex-direction: column; gap: var(--space-md); }
       .history-timeline,
       .values-grid { grid-template-columns: 1fr; }
@@ -504,7 +537,7 @@
           <span>O marce</span>
         </nav>
         <span class="page-hero-eyebrow">O marce</span>
-        <h1 class="page-hero-title">GAPOSA<br><em>MARKA O GLOBALNYM ZASIĘGU</em></h1>
+        <h1 class="page-hero-title">GAPOSA<br><em>MARKA O ZASIĘGU GLOBALNYM</em></h1>
         <p class="page-hero-lead">
           Założona w 1969 roku Gaposa jest włoskim producentem systemów automatyki do bram przemysłowych
           i garażowych, a także rolet i systemów ochrony przeciwsłonecznej. Od początku działalności

@@ -22,18 +22,36 @@
 }
 
 .contact-page-title {
-  max-width: 10ch;
+  max-width: 13ch;
   margin-bottom: var(--space-md);
   font-weight: 900;
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: .88;
   color: #fff;
+  text-wrap: balance;
+}
+
+.contact-page-title em {
+  color: #58b7f4;
+  font-style: normal;
 }
 
 .contact-page-lead {
-  max-width: 58ch;
+  max-width: 64ch;
   color: rgba(255, 255, 255, .7);
   font-size: 1.08rem;
+}
+
+.contact-page-lead strong {
+  display: block;
+  margin-bottom: .55rem;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, .94);
+}
+
+.contact-page-lead p {
+  max-width: 60ch;
+  line-height: 1.7;
 }
 
 .contact-page-quick {
