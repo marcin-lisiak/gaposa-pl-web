@@ -400,13 +400,19 @@ h3 {
 
 /* Per-slide background photos */
 .hero-slide[data-slide="0"] {
-  background-image: url('../assets/img/hero_backgroung_3.jpg');
+  background-image: url('../assets/img/hero-industrial-italy-v1.png');
   background-size: cover;
   background-position: center;
 }
 
 .hero-slide[data-slide="1"] {
-  background-image: url('../assets/img/hero_backgroung_2.jpg');
+  background-image: url('../assets/img/hero_backgroung_3.JPG');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-slide[data-slide="2"] {
+  background-image: url('../assets/img/hero_backgroung_2.JPG');
   background-size: cover;
   background-position: center;
 }

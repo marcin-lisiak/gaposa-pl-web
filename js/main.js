@@ -5,9 +5,12 @@ const heroPrevBtn = document.getElementById('hero-prev');
 const heroNextBtn = document.getElementById('hero-next');
 const heroProgressFill = document.getElementById('hero-progress-fill');
 const heroCurrentLabel = document.getElementById('hero-slide-current');
+const heroTotalLabel = document.getElementById('hero-slide-total');
 let heroIndex = 0;
 let heroInterval = null;
 const HERO_DELAY = 6000;
+
+if (heroTotalLabel) heroTotalLabel.textContent = String(heroSlides.length).padStart(2, '0');
 
 function heroGoTo(index) {
   heroSlides[heroIndex].classList.remove('active');
@@ -52,6 +55,28 @@ heroDots.forEach(dot => dot.addEventListener('click', () => { heroGoTo(Number(do
 
 // Pause on hover
 const heroSection = document.getElementById('hero');
+
+function syncHeroSlideHeights() {
+  if (!heroSection) return;
+
+  const slideInners = [...heroSection.querySelectorAll('.hero-slide-inner')];
+  slideInners.forEach(inner => { inner.style.minHeight = ''; });
+
+  requestAnimationFrame(() => {
+    const tallestSlide = Math.max(...slideInners.map(inner => inner.scrollHeight));
+    slideInners.forEach(inner => { inner.style.minHeight = `${tallestSlide}px`; });
+  });
+}
+
+let heroResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(heroResizeTimer);
+  heroResizeTimer = setTimeout(syncHeroSlideHeights, 120);
+});
+window.addEventListener('load', syncHeroSlideHeights);
+document.fonts?.ready.then(syncHeroSlideHeights);
+syncHeroSlideHeights();
+
 if (heroSection) {
   heroSection.addEventListener('mouseenter', stopHeroAutoPlay);
   heroSection.addEventListener('mouseleave', startHeroAutoPlay);

@@ -121,6 +121,124 @@ body {
   color: rgba(255, 255, 255, .78);
 }
 
+.hero-brand-slide .hero-slide-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.hero-brand-slide::before {
+  background: rgba(5, 15, 28, .7);
+}
+
+.hero-brand-slide .hero-slide-text {
+  width: 100%;
+  align-items: flex-start;
+  text-align: left;
+  padding-bottom: 8rem;
+}
+
+.hero-brand-logo-col {
+  min-height: 420px;
+  justify-content: flex-end;
+  padding-bottom: 8rem;
+}
+
+.hero-slide.active .hero-brand-logo-col {
+  transform: translateY(-4rem);
+}
+
+.hero-brand-logo-main {
+  width: min(100%, 430px);
+  height: auto;
+  filter: brightness(0) invert(1) drop-shadow(0 12px 28px rgba(0, 0, 0, .3));
+}
+
+.hero-brand-slide .hero-slide-title {
+  max-width: none;
+  font-size: clamp(2.8rem, 4.8vw, 4.35rem);
+}
+
+.hero-brand-slide .hero-slide-title em {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-brand-slide .hero-slide-subtitle {
+  max-width: 58ch;
+  margin-bottom: var(--space-lg);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.hero-brand-scope {
+  gap: .35rem;
+  font-size: .9rem !important;
+  line-height: 1.5 !important;
+  color: rgba(255, 255, 255, .72);
+}
+
+.hero-brand-scope p {
+  margin: 0;
+}
+
+.hero-brand-scope strong {
+  color: rgba(255, 255, 255, .94);
+  font-weight: 700;
+}
+
+.hero-brand-slide .hero-slide-actions {
+  justify-content: flex-start;
+}
+
+@media (min-width: 1025px) and (max-height: 850px) {
+  .hero-slide:not(.hero-brand-slide) .hero-slide-text {
+    padding-top: var(--space-md);
+    padding-bottom: 5rem;
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-slide-title {
+    font-size: clamp(3.5rem, 5.6vw, 4.6rem);
+    margin-bottom: .45rem;
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-slide-subtitle {
+    margin-bottom: .8rem;
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-features {
+    gap: .65rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-feat-desc {
+    font-size: .95rem;
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-product-img {
+    max-height: min(410px, 52vh);
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-brand-badge {
+    margin-top: .5rem;
+  }
+
+  .hero-slide:not(.hero-brand-slide) .hero-brand-badge img {
+    height: 42px;
+  }
+
+  .hero-slider-nav {
+    bottom: 1.35rem;
+  }
+
+  .hero-slider-counter {
+    bottom: 1.6rem;
+  }
+}
+
 .italy-stripe {
   position: relative;
   height: 24px;
@@ -1076,6 +1194,21 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .hero-brand-slide .hero-slide-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hero-brand-logo-col {
+    order: -1;
+    min-height: 150px;
+    padding: var(--space-lg) var(--space-md) 0;
+  }
+
+  .hero-slide.active .hero-brand-logo-col {
+    transform: none;
+  }
+
   .products-section .section-header {
     margin-bottom: var(--space-md);
   }
@@ -1097,6 +1230,56 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-brand-logo-col {
+    min-height: 285px;
+    justify-content: center;
+    padding-top: var(--space-md);
+  }
+
+  .hero-brand-slide .hero-slide-title {
+    width: 100%;
+    max-width: calc(100vw - 3rem);
+    font-size: clamp(1.75rem, 8vw, 2.1rem);
+    line-height: .98;
+    overflow-wrap: break-word;
+  }
+
+  .hero-brand-slide .hero-slide-title em {
+    font-size: .7em;
+  }
+
+  .hero-brand-slide .hero-slide-text {
+    width: calc(100% - 2rem);
+    max-width: 360px;
+    justify-self: center;
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 7rem;
+  }
+
+  .hero-brand-logo-main {
+    width: min(64vw, 250px);
+  }
+
+  .hero-brand-slide .hero-slide-subtitle {
+    width: 100%;
+    max-width: calc(100vw - 3rem);
+    font-size: .82rem;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+
+  .hero-brand-scope {
+    font-size: .78rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .hero-brand-slide .hero-slide-actions {
+    justify-content: center;
+  }
+
   .hero-slide-subtitle {
     width: 100%;
     max-width: calc(100vw - 2.5rem);
