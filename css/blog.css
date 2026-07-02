@@ -206,20 +206,20 @@
 .blog-title-power {
   display: grid;
   gap: .75rem;
-  max-width: 760px !important;
+  max-width: 700px !important;
   margin-bottom: 1.2rem;
-  font-size: clamp(4rem, 7.1vw, 6.35rem);
-  line-height: .86;
+  font-size: clamp(3.6rem, 6.35vw, 5.8rem);
+  line-height: .9;
 }
 
 .blog-title-power span {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .blog-title-power small {
   display: block;
-  max-width: 24ch;
-  font-size: clamp(1.85rem, 3.25vw, 3rem);
+  max-width: 22ch;
+  font-size: clamp(1.75rem, 2.8vw, 2.6rem);
   font-weight: 900;
   line-height: 1.02;
   color: rgba(255, 255, 255, .9);
