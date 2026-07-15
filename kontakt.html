@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://gaposa.pl/kontakt" />
+  <link rel="icon" type="image/png" href="assets/img/gaposa-mini-logo.png" />
+  <link rel="apple-touch-icon" href="assets/img/gaposa-mini-logo.png" />
   <title>Kontakt i wsparcie techniczne Gaposa | Cezab Distribution</title>
   <meta name="description" content="Skontaktuj się z autoryzowanym dystrybutorem Gaposa w Polsce. Dobór produktów, pomoc techniczna i obsługa zamówień." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -107,19 +110,50 @@
               </div>
             </div>
             <div class="why-grid">
-              <div class="why-card"><span class="why-num">01</span><strong>Wsparcie techniczne</strong><p>Doradztwo doboru produktów i pomoc posprzedażna</p></div>
-              <div class="why-card"><span class="why-num">02</span><strong>Szkolenia dla instalatorów</strong><p>Bezpłatne szkolenia produktowe i techniczne</p></div>
-              <div class="why-card"><span class="why-num">03</span><strong>Dostępność produktów</strong><p>Magazyn krajowy, szybka realizacja zamówień</p></div>
-              <div class="why-card"><span class="why-num">04</span><strong>Gwarancja producenta</strong><p>Pełna gwarancja i obsługa reklamacji</p></div>
+              <div class="why-card">
+                <span class="why-num">01</span>
+                <strong>Oferta dla producentów</strong>
+                <p>Produkty z pełnej oferty GAPOSA dedykowane producentom:</p>
+                <ul>
+                  <li>bram segmentowych, rolowanych i szybkobieżnych</li>
+                  <li>rolet, markiz oraz innych osłon słonecznych</li>
+                </ul>
+              </div>
+              <div class="why-card">
+                <span class="why-num">02</span>
+                <strong>Oferta dla instalatorów</strong>
+                <p>Oferta popularnych produktów dostępnych do szybkiej wysyłki:</p>
+                <ul>
+                  <li>napędy do bram segmentowych i szybkobieżnych</li>
+                  <li>centrale sterujące 400V oraz 230V z inwerterem</li>
+                </ul>
+              </div>
+              <div class="why-card">
+                <span class="why-num">03</span>
+                <strong>Gwarancja</strong>
+                <p>Warunki gwarancji uzależnione są od poniższego podziału:</p>
+                <ul>
+                  <li>produkty do zastosowań przemysłowych - 24 miesiące</li>
+                  <li>produkty do zastosowań rezydencjalnych - 60 miesięcy</li>
+                </ul>
+              </div>
+              <div class="why-card">
+                <span class="why-num">04</span>
+                <strong>Obsługa serwisowa</strong>
+                <p>Posiadamy własny dział serwisu i wsparcia technicznego:</p>
+                <ul>
+                  <li>naprawy gwarancyjne i pogwarancyjne, dobór akcesoriów</li>
+                  <li>wsparcie telefoniczne i szkolenia techniczne w siedzibie firmy</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="distributor-img-col reveal reveal-delay-1">
             <div class="hq-image-frame">
               <img src="assets/img/cezab-distribtuion-base.jpg" alt="Siedziba Cezab Distribution — autoryzowany dystrybutor Gaposa w Polsce" class="hq-img" />
             </div>
-            <div class="hq-caption">
+            <div class="hq-caption hq-caption--logo-only">
               <img src="assets/img/gaposa-logo-byd.png" alt="Gaposa by D" class="hq-caption-logo" />
-              <span>Autoryzowany dystrybutor w Polsce</span>
             </div>
           </div>
         </div>
@@ -134,12 +168,15 @@
             <h2 class="section-title">Jak możemy pomóc?</h2>
             <p class="about-body">Opisz swoje zapotrzebowanie lub pytanie. Skontaktujemy się z Tobą i pomożemy dobrać odpowiednie rozwiązanie.</p>
           </div>
-          <form class="contact-form reveal reveal-delay-1" id="contact-form" novalidate>
+          <form class="contact-form reveal reveal-delay-1" id="contact-form" data-contact-endpoint="api/contact.php" novalidate>
+            <input type="hidden" name="started_at" class="contact-started-at" value="" />
+            <div class="form-trap" aria-hidden="true"><label for="form-website">Strona internetowa</label><input type="text" id="form-website" name="website" tabindex="-1" autocomplete="off" /></div>
             <div class="form-group"><label for="form-name" class="form-label">Imię i nazwisko</label><input type="text" id="form-name" name="name" class="form-input" placeholder="Jan Kowalski" required /></div>
             <div class="form-group"><label for="form-email" class="form-label">E-mail</label><input type="email" id="form-email" name="email" class="form-input" placeholder="jan@firma.pl" required /></div>
             <div class="form-group"><label for="form-phone" class="form-label">Telefon <span class="form-optional">(opcjonalnie)</span></label><input type="tel" id="form-phone" name="phone" class="form-input" placeholder="+48 62 720 54 30" /></div>
             <div class="form-group"><label for="form-message" class="form-label">Wiadomość</label><textarea id="form-message" name="message" class="form-input form-textarea" placeholder="Opisz swoje zapotrzebowanie..." rows="4" required></textarea></div>
             <button type="submit" class="btn btn-primary btn-full" id="contact-submit">Wyślij zapytanie</button>
+            <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
             <p class="form-note">Odpowiadamy w ciągu 24h w dni robocze.</p>
           </form>
         </div>

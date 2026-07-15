@@ -14,4 +14,19 @@ Thumbs.db
 *.png
 *.jpg
 *.jpeg
+*.tif
+*.tiff
+*.psd
+*.ai
 !assets/img/*
+!assets/img/**/
+!assets/img/**/*
+assets/img/**/*.tif
+assets/img/**/*.tiff
+assets/img/**/*.psd
+assets/img/**/*.ai
+
+# Local mail credentials for production upload
+mail-config.php
+api/mail-config.php
+private/mail-config.php

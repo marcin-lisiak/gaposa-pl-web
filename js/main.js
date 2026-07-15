@@ -260,7 +260,7 @@ document.querySelectorAll('.offer-card').forEach((card, index) => {
     compatibleGrid.className = 'compatible-controllers';
     const controllerLinks = {
       QC40F: 'products/qc40f.html',
-      QC600S: 'products/qc600s.html'
+      QC600: 'products/qc600.html'
     };
     compatibleControllers.split(';').forEach(controller => {
       const [name, image] = controller.split(',');
@@ -378,6 +378,62 @@ if (configSizeEl) {
   });
 }
 
+// ═══ PRODUCT TECHNICAL IMAGE ZOOM ═══
+const technicalZoomFigures = document.querySelectorAll('.pd-technical-visual');
+if (technicalZoomFigures.length) {
+  const lightbox = document.createElement('div');
+  lightbox.className = 'pd-image-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Powiększony podgląd przekroju technicznego');
+  lightbox.innerHTML = `
+    <div class="pd-image-lightbox-panel" role="document">
+      <button class="pd-image-lightbox-close" type="button" aria-label="Zamknij podgląd">×</button>
+      <img src="" alt="" />
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector('img');
+  const lightboxClose = lightbox.querySelector('.pd-image-lightbox-close');
+  let lastZoomTrigger = null;
+
+  function openTechnicalLightbox(img, trigger) {
+    if (!img || !lightboxImage) return;
+    lastZoomTrigger = trigger || img;
+    lightboxImage.src = img.currentSrc || img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('has-image-lightbox');
+    lightboxClose?.focus();
+  }
+
+  function closeTechnicalLightbox() {
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('has-image-lightbox');
+    if (lightboxImage) lightboxImage.src = '';
+    lastZoomTrigger?.focus?.();
+  }
+
+  technicalZoomFigures.forEach(figure => {
+    const img = figure.querySelector('img');
+    if (!img) return;
+
+    img.addEventListener('click', () => openTechnicalLightbox(img, img));
+  });
+
+  lightboxClose?.addEventListener('click', closeTechnicalLightbox);
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeTechnicalLightbox();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+      closeTechnicalLightbox();
+    }
+  });
+}
+
 // ═══ SCROLL REVEAL ═══
 const revealEls = document.querySelectorAll('.reveal:not(.hero .reveal)');
 const revealObserver = new IntersectionObserver(entries => {
@@ -390,19 +446,54 @@ revealEls.forEach(el => revealObserver.observe(el));
 // ═══ CONTACT FORM ═══
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  const startedAtField = contactForm.querySelector('.contact-started-at');
+  const formStatus = document.getElementById('contact-form-status');
+  if (startedAtField) startedAtField.value = String(Math.floor(Date.now() / 1000));
+
+  function setFormStatus(message, type = 'idle') {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.dataset.state = type;
+  }
+
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = document.getElementById('contact-submit');
-    btn.textContent = 'Wysłano ✓';
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+    const endpoint = contactForm.dataset.contactEndpoint || 'api/contact.php';
+    const payload = Object.fromEntries(formData.entries());
+    const defaultText = btn.textContent;
+
+    btn.textContent = 'Wysyłam...';
     btn.disabled = true;
-    btn.style.background = '#2d8a4e';
-    btn.style.borderColor = '#2d8a4e';
-    setTimeout(() => {
-      btn.textContent = 'Wyślij zapytanie';
-      btn.disabled = false;
-      btn.style.background = '';
-      btn.style.borderColor = '';
+    setFormStatus('', 'idle');
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.ok === false) {
+        throw new Error(result.message || 'Nie udało się wysłać wiadomości.');
+      }
+
       contactForm.reset();
-    }, 3500);
+      if (startedAtField) startedAtField.value = String(Math.floor(Date.now() / 1000));
+      setFormStatus(result.message || 'Dziękujemy. Wiadomość została wysłana.', 'success');
+      btn.textContent = 'Wysłano ✓';
+      setTimeout(() => { btn.textContent = defaultText; }, 2200);
+    } catch (error) {
+      setFormStatus(error.message || 'Nie udało się wysłać wiadomości. Spróbuj ponownie.', 'error');
+      btn.textContent = defaultText;
+    } finally {
+      btn.disabled = false;
+    }
   });
 }

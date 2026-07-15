@@ -853,11 +853,81 @@ body {
   color: #fff;
 }
 
+.offer-card-actions--with-docs {
+  display: grid;
+  grid-template-columns: minmax(180px, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: .8rem 1rem;
+}
+
+.offer-card-actions--with-docs > a[href="#kontakt"] {
+  order: initial;
+  justify-self: start;
+}
+
+.offer-card-actions--with-docs .offer-doc-panel {
+  min-width: 0;
+  padding: .72rem .9rem .78rem;
+  border: 1px solid rgba(0, 92, 143, .18);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 92, 143, .045);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .78);
+}
+
+.offer-card-actions--with-docs .offer-doc-panel > span {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--c-accent);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.offer-card-actions--with-docs .offer-doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .95rem;
+  align-items: center;
+}
+
+.offer-card-actions--with-docs .offer-doc-links a {
+  padding: .45rem .7rem;
+  border: 1px solid rgba(0, 92, 143, .24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 7px 16px rgba(15, 29, 39, .08);
+  color: var(--c-ink);
+  font-size: .7rem;
+}
+
+.offer-card-actions--with-docs .offer-doc-links a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(15, 29, 39, .12);
+  border-color: rgba(0, 92, 143, .42);
+  color: var(--c-accent-hover);
+}
+
 .offer-card-actions a.offer-details-link {
   order: initial;
   border-color: var(--c-ink);
   background: rgba(255, 255, 255, .56);
   color: var(--c-ink);
+}
+
+.offer-card-actions .offer-details-link-disabled {
+  display: inline-block;
+  order: initial;
+  padding: .85rem 1.75rem;
+  border: 1px solid rgba(27, 39, 50, .22);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, .34);
+  color: rgba(27, 39, 50, .46);
+  cursor: default;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .offer-card-set .offer-card-media {
@@ -1213,6 +1283,14 @@ body {
 .catalog-card:hover {
   transform: none;
   box-shadow: none;
+}
+
+.catalog-card[aria-disabled="true"] {
+  cursor: default;
+}
+
+.catalog-card[aria-disabled="true"]:hover img {
+  transform: none;
 }
 
 .catalog-card-image {
@@ -1632,6 +1710,20 @@ body {
 
   .offer-card-copy {
     padding: 0;
+  }
+
+  .offer-card-actions--with-docs {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .offer-card-actions--with-docs .offer-doc-panel {
+    padding: .72rem .82rem;
+    border: 1px solid rgba(0, 92, 143, .18);
+  }
+
+  .offer-card-actions--with-docs .offer-doc-links {
+    gap: .65rem 1rem;
   }
 
   .offer-card-media {
